@@ -33,3 +33,19 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::get('beranda/home', function () {
+    return Inertia::render('Beranda/Home');
+})->name('beranda.home');
+
+Route::get('beranda/search', function () {
+    return Inertia::render('Beranda/Result');
+})->name('beranda.result');
+
+Route::get('beranda/detail_tafsir', function () {
+    return Inertia::render('Beranda/DetailTafsir');
+})->name('beranda.detail-tafsir');
+
+Route::get('beranda/detail_surah', function () {
+    return Inertia::render('Beranda/DetailSurah');
+})->name('beranda.detail-surah');
