@@ -19,7 +19,6 @@
         "vue": "^3.2.31"
     },
     "dependencies": {
-        "primeicons": "^6.0.1",
         "primevue": "^3.23.0"
     }
 }
