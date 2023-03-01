@@ -28,7 +28,7 @@ import Foother from "../../Components/Foother.vue";
                         >
                     </div>
                     <div
-                        class="flex justify-end text-end font-medium text-[35px]"
+                        class="flex justify-end text-end font-medium text-[35px] font-['Noto_Naskh_Arabic']"
                     >
                         قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ
                         وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا

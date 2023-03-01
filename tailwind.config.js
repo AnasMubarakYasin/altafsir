@@ -13,7 +13,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Figtree', "Noto Naskh Arabic", ...defaultTheme.fontFamily.sans],
             },
         },
     },
