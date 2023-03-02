@@ -21,11 +21,8 @@
     },
     "dependencies": {
         "@fontsource/amiri": "^4.5.11",
-        "@fontsource/noto-naskh-arabic": "^4.5.0",
-        "@fontsource/roboto": "^4.5.8",
         "primeicons": "^6.0.1",
         "primevue": "^3.23.0",
-        "typeface-notokufiarabic": "^1.0.0",
-        "vue-backtotop": "^1.6.1"
+        "typeface-notokufiarabic": "^1.0.0"
     }
 }
