@@ -10,7 +10,7 @@ import Foother from "../../Components/Foother.vue";
 <template>
     <Head title="Search Results" />
     <TopBar />
-    <div class="px-[70px] mt-32">
+    <div class="px-[70px] mt-32 font-arabic">
         <div class="grid gap-10 grid-cols-4">
             <div>
                 <div

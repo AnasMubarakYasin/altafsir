@@ -7,7 +7,7 @@ import Foother from "../../Components/Foother.vue";
 <template>
     <Head title="Detail Tafsir Surah Al-Fatihah" />
     <TopBar />
-    <div class="px-[200px] mt-24">
+    <div class="px-[200px] mt-24 font-arabic">
         <div class="grid">
             <div
                 class="capitalize text-[40px] font-bold flex justify-center items-center gap-10"

@@ -3,7 +3,9 @@ import Button from "primevue/button";
 </script>
 
 <template>
-    <div class="bg-[#4669707c] p-5 py-3 flex items-center">
+    <div
+        class="bg-[#4669707c] p-5 py-3 flex items-center font-arabic justify-center"
+    >
         <span class="font-extrabold text-black"
             >© 2023 - ALL RIGHTS RESERVED | AL-TAFSIR</span
         >

@@ -7,7 +7,7 @@ import Dropdown from "primevue/dropdown";
 <template>
     <Menubar class="myMenu">
         <template #start>
-            <div class="flex items-center">
+            <div class="flex items-center font-arabic">
                 <img alt="logo" src="/logo.png" class="mr-2 w-10" />
                 <span class="text-logo">al-taqur</span>
             </div>
