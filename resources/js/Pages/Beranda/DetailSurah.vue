@@ -7,7 +7,7 @@ import Foother from "../../Components/Foother.vue";
 <template>
     <Head title="Detail Surah Al-Fatihah" />
     <TopBar />
-    <div class="px-[200px] mt-24">
+    <div class="container mt-20 grid place-items-center font-arabic">
         <div class="grid">
             <div
                 class="capitalize text-[40px] font-bold flex justify-center items-center gap-10"
@@ -17,26 +17,27 @@ import Foother from "../../Components/Foother.vue";
             </div>
             <hr class="my-3" />
             <div class="grid gap-3">
-                <div class="flex gap-5">
-                    <div
-                        class="w-[38px] flex justify-center items-cente p-1.5 bg-no-repeat"
-                        style="background-image: url(/icon_number.svg)"
-                    >
-                        <span
-                            class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
-                            >1</span
+                <div class="flex gap-2">
+                    <div class="relative">
+                        <img
+                            src="/icon_number.svg"
+                            alt=""
+                            class="w-20 h-20 p-2"
+                        />
+                        <span class="absolute top-1">1</span>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div
+                            class="text-end font-medium text-3xl leading-[2.5]"
                         >
+                            قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ
+                            وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا
+                            بِمَا تَعِدُنَآ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ
+                        </div>
+                        <div class="text-lg font-roboto">
+                            Segala puji bagi Allah, Tuhan1) semesta alam
+                        </div>
                     </div>
-                    <div
-                        class="flex justify-end text-end font-medium text-[35px]"
-                    >
-                        قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ
-                        وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا
-                        بِمَا تَعِدُنَآ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ
-                    </div>
-                </div>
-                <div class="text-[18px] ml-14">
-                    Segala puji bagi Allah, Tuhan1) semesta alam
                 </div>
                 <div class="flex gap-2">
                     <button

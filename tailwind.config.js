@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -18,5 +19,18 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [
+        plugin(function({ addUtilities }) {
+            addUtilities({
+                '.font-arabic': {
+                    'font-family': 'Amiri',
+                },
+                '.font-roboto': {
+                    'font-family': 'Roboto',
+                },
+            })
+        }),
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography')
+    ],
 };
