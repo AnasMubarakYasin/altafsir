@@ -1,8 +1,12 @@
 {
     "compilerOptions": {
-        "baseUrl": "./",
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "nodenext",
+        "baseUrl": ".",
         "paths": {
-            "@/*": ["./resources/js/*"]
+            "@/*": ["./resources/*"],
+            "@larasar/*": ["./resources/vendor/larasar/*"]  // ./resources/vendor/larasar/*
         }
     }
 }
