@@ -27,20 +27,20 @@ export function wait<
     ThisArg = undefined,
     Callback = (this: ThisArg, arg: Arg) => unknown,
     Return = Callback extends (this: any, arg: Arg) => infer R
-        ? R extends Promise<infer T>
-            ? T
-            : R
-        : unknown
+    ? R extends Promise<infer T>
+    ? T
+    : R
+    : unknown
 >(
     opt:
         | number
         | {
-              timeout: number;
-              delay?: number;
-              callback?: Callback;
-              arg?: Arg;
-              thisArg?: ThisArg;
-          }
+            timeout: number;
+            delay?: number;
+            callback?: Callback;
+            arg?: Arg;
+            thisArg?: ThisArg;
+        }
 ): Promise<Return> {
     const promise = new Promiseify();
     if (typeof opt == "number") {
@@ -65,4 +65,19 @@ export function wait<
         }, opt.timeout);
     }
     return promise;
+}
+function array_to_object(arr: Array<any>) {
+    const obj = {};
+    for (const it of arr) {
+        Object.defineProperty(obj, it.name, {
+            configurable: true,
+            enumerable: true,
+            writable: true,
+            value: null,
+        })
+    }
+    return obj;
+}
+function object_to_array(obj: Object) {
+
 }

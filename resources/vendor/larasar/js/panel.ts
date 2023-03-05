@@ -3,6 +3,8 @@ import {
     symRoundedDashboard,
     symRoundedGroup,
     symRoundedLogout,
+    symRoundedMenuBook,
+    symRoundedFiberSmartRecord,
 } from "@quasar/extras/material-symbols-rounded";
 import { route } from "./lib/ziggy.js";
 // @ts-ignore
@@ -24,11 +26,27 @@ export default class Panel extends PanelBase {
                 index: route("web.panel.dashboard"),
             },
             {
+                tag: "Data",
+                name: "Alquran",
+                icon: symRoundedMenuBook,
+                index: route("web.panel.alquran.index"),
+                sub: [
+                    {
+                        name: "Surah",
+                        index: route("web.panel.alquran.surah.index"),
+                    },
+                    {
+                        name: "Ayat",
+                        index: route("web.panel.alquran.ayat.index"),
+                    }
+                ]
+            },
+            {
                 tag: "Accounts",
                 name: "Users",
                 icon: symRoundedGroup,
                 index: route("web.panel.users.index"),
-            }
+            },
         ]
     }
     get_top_menu(): Menu[] {

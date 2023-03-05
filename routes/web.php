@@ -18,5 +18,8 @@ Route::middleware(['larasar.guest:web,web.panel.index', 'larasar.inertia'])->gro
 Route::middleware(['larasar.authc:web,web.entry.index', 'larasar.inertia'])->group(function () {
     Route::redirect("/panel", "/panel/dashboard")->name('web.panel.index');
     Route::get('/panel/dashboard', 'Panel\DashboardController')->name('web.panel.dashboard');
+    Route::get('/panel/alquran', 'Panel\Alquran')->name('web.panel.alquran.index');
+    Route::get('/panel/alquran/surah', 'Panel\Alquran@surah')->name('web.panel.alquran.surah.index');
+    Route::get('/panel/alquran/ayat', 'Panel\Alquran@ayat')->name('web.panel.alquran.ayat.index');
     Route::get('/panel/users', 'Panel\DashboardController')->name('web.panel.users.index');
 });

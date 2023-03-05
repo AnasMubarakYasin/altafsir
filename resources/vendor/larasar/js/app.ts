@@ -7,14 +7,24 @@ import Ziggy from "./lib/ziggy.js";
 
 const pinia = createPinia();
 
-import { Quasar } from "quasar";
+import {
+    Quasar,
+    Dialog,
+    Notify,
+} from 'quasar'
 import quasarIconSet from "quasar/icon-set/svg-material-icons";
 import "quasar/src/css/index.sass";
 
 import "../css/app.css";
+import "@fontsource/public-sans";
+import "@fontsource/public-sans/600.css";
+import "@fontsource/public-sans/700.css";
+import "@fontsource/public-sans/800.css";
+import "@fontsource/public-sans/900.css";
 
 import Layout from "./Layouts/Index.vue";
 
+// @ts-ignore
 import axios from 'axios';
 import type { AxiosStatic } from 'axios';
 import AppCtx from "./lib/app-ctx";
@@ -52,6 +62,13 @@ export default async function (context: AppCtx) {
                 .use(ZiggyVue, Ziggy)
                 .use(Quasar, {
                     iconSet: quasarIconSet,
+                    plugins: {
+                        Dialog,
+                        Notify,
+                    },
+                    config: {
+                        notify: { }
+                    }
                 })
                 .use(app_plugin)
                 .mount(el);

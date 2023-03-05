@@ -71,6 +71,9 @@ function toggle_dark_mode() {
 #page-scroll > .q-scrollarea__container {
     min-height: 100vh;
 }
+.q-scrollarea__thumb.q-scrollarea__thumb--v {
+    z-index: 1100;
+}
 </style>
 <style scoped>
 .link {
@@ -84,7 +87,10 @@ function toggle_dark_mode() {
 }
 </style>
 <template>
-    <q-scroll-area id="page-scroll" class="min-h-screen font-sans antialiased">
+    <q-scroll-area
+        id="page-scroll"
+        class="min-h-screen font-public-sans antialiased"
+    >
         <q-layout view="lhh LpR lff">
             <q-header reveal :reveal-offset="Infinity" class="shadow:bar">
                 <q-toolbar class="bar">
@@ -178,7 +184,11 @@ function toggle_dark_mode() {
                                     header
                                     class="text-center py-2 text-sm text-gray-600 dark:text-gray-400 font-semibold"
                                 >
-                                    <Link href="/" class="hover:underline cursor-pointer">See all</Link>
+                                    <Link
+                                        href="/"
+                                        class="hover:underline cursor-pointer"
+                                        >See all</Link
+                                    >
                                 </q-item-label>
                             </q-list>
                         </q-menu>
@@ -268,10 +278,12 @@ function toggle_dark_mode() {
                 <q-scroll-area class="h-full bar-def">
                     <q-list padding>
                         <template v-for="(menu, key) in panel.get_side_menu()">
+                            <q-separator v-if="menu.tag" spaced />
                             <q-item-label v-if="menu.tag" header class="pb-1">{{
                                 menu.tag
                             }}</q-item-label>
                             <q-item
+                                v-if="!menu?.sub"
                                 clickable
                                 v-ripple
                                 :active="store.active_link == menu.index"
@@ -279,9 +291,8 @@ function toggle_dark_mode() {
                                 active-class="link-active"
                                 class="link"
                             >
-                                <q-item-section :avatar="!!menu.icon">
+                                <q-item-section v-if="!!menu.icon" avatar>
                                     <q-icon
-                                        v-if="!!menu.icon"
                                         :name="menu.icon"
                                         class="text-gray-700 dark:text-gray-200"
                                     />
@@ -291,7 +302,39 @@ function toggle_dark_mode() {
                                     >{{ menu.name }}</q-item-section
                                 >
                             </q-item>
-                            <q-separator v-if="!key" spaced />
+                            <q-expansion-item
+                                v-else
+                                :icon="menu.icon"
+                                :label="menu.name"
+                                :default-opened="store.active_link.startsWith(menu.index)"
+                                active-class="link-active"
+                                class="text-gray-700 dark:text-gray-200 text-base font-medium"
+                            >
+                                <q-item
+                                    inset
+                                    v-for="menusub of menu.sub"
+                                    clickable
+                                    v-ripple
+                                    :active="store.active_link == menusub.index"
+                                    @click="
+                                        store.set_active_link(menusub.index)
+                                    "
+                                    active-class="link-active"
+                                    class="link"
+                                    :inset-level="1"
+                                >
+                                    <q-item-section v-if="!!menusub.icon" avatar>
+                                        <q-icon
+                                            :name="menusub.icon"
+                                            class="text-gray-700 dark:text-gray-200"
+                                        />
+                                    </q-item-section>
+                                    <q-item-section
+                                        class="text-base text-gray-800 dark:text-gray-100"
+                                        >{{ menusub.name }}</q-item-section
+                                    >
+                                </q-item>
+                            </q-expansion-item>
                         </template>
                     </q-list>
                 </q-scroll-area>
