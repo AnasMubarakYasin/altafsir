@@ -1,0 +1,159 @@
+<script setup>
+import { Head } from "@inertiajs/vue3";
+import TopBar from "../../Components/TopBar.vue";
+import Foother from "../../Components/Foother.vue";
+</script>
+
+<template>
+    <Head title="Detail Surah Al-Fatihah" />
+    <TopBar />
+    <div class="mt-20 font-arabic w-full px-36">
+        <div
+            class="capitalize text-[40px] font-bold flex justify-center items-center gap-10"
+        >
+            <i class="pi pi-bookmark"></i>
+            surah al-fatihah <i class="pi pi-bookmark"></i>
+        </div>
+        <hr class="my-3" />
+        <div class="grid gap-3">
+            <div class="flex gap-5">
+                <div>
+                    <div
+                        class="mt-1 flex justify-center items-cente p-2 bg-no-repeat"
+                        style="background-image: url(/icon_number.svg)"
+                    >
+                        <span
+                            class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                            >1</span
+                        >
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="text-end font-medium text-[27px] leading-[2.5]">
+                        قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ
+                        وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا
+                        بِمَا تَعِدُنَآ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ قَالُوٓاْ
+                        أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ وَنَذَرَ مَا
+                        كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا بِمَا تَعِدُنَآ
+                        إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ قَالُوٓاْ أَجِئۡتَنَا
+                        لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ وَنَذَرَ مَا كَانَ يَعۡبُدُ
+                        ءَابَآؤُنَا ۖ فَأۡتِنَا بِمَا تَعِدُنَآ إِن كُنتَ مِنَ
+                        ٱلصَّٰدِقِينَ قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ
+                        وَحۡدَهُۥ وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ
+                        فَأۡتِنَا بِمَا تَعِدُنَآ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ
+                    </div>
+                    <div class="text-lg font-roboto">
+                        Segala puji bagi Allah, Tuhan1) semesta alam
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="px-3 py-2 ml-14 bg-[#466970] text-[15px] flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                >
+                    <i class="pi pi-file mr-1"></i> salin</button
+                ><button
+                    class="px-3 py-2 bg-[#466970] text-[15px] flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                >
+                    <i class="pi pi-caret-right"></i>
+                </button>
+            </div>
+        </div>
+        <hr class="my-4" />
+        <div class="grid gap-3">
+            <div class="flex gap-5">
+                <div>
+                    <div
+                        class="mt-1 flex justify-center items-cente p-2 bg-no-repeat"
+                        style="background-image: url(/icon_number.svg)"
+                    >
+                        <span
+                            class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                            >1</span
+                        >
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="text-end font-medium text-[27px] leading-[2.5]">
+                        قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ
+                        وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا
+                        بِمَا تَعِدُنَآ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ قَالُوٓاْ
+                        أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ وَنَذَرَ مَا
+                        كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا بِمَا تَعِدُنَآ
+                        إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ قَالُوٓاْ أَجِئۡتَنَا
+                        لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ وَنَذَرَ مَا كَانَ يَعۡبُدُ
+                        ءَابَآؤُنَا ۖ فَأۡتِنَا بِمَا تَعِدُنَآ إِن كُنتَ مِنَ
+                        ٱلصَّٰدِقِينَ قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ
+                        وَحۡدَهُۥ وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ
+                        فَأۡتِنَا بِمَا تَعِدُنَآ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ
+                    </div>
+                    <div class="text-lg font-roboto">
+                        Segala puji bagi Allah, Tuhan1) semesta alam
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="px-3 py-2 ml-14 bg-[#466970] text-[15px] flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                >
+                    <i class="pi pi-file mr-1"></i> salin</button
+                ><button
+                    class="px-3 py-2 bg-[#466970] text-[15px] flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                >
+                    <i class="pi pi-caret-right"></i>
+                </button>
+            </div>
+        </div>
+        <hr class="my-4" />
+        <div class="grid gap-3">
+            <div class="flex gap-5">
+                <div>
+                    <div
+                        class="mt-1 flex justify-center items-cente p-2 bg-no-repeat"
+                        style="background-image: url(/icon_number.svg)"
+                    >
+                        <span
+                            class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                            >1</span
+                        >
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="text-end font-medium text-[27px] leading-[2.5]">
+                        قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ
+                        وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا
+                        بِمَا تَعِدُنَآ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ قَالُوٓاْ
+                        أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ وَنَذَرَ مَا
+                        كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ فَأۡتِنَا بِمَا تَعِدُنَآ
+                        إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ قَالُوٓاْ أَجِئۡتَنَا
+                        لِنَعۡبُدَ ٱللَّهَ وَحۡدَهُۥ وَنَذَرَ مَا كَانَ يَعۡبُدُ
+                        ءَابَآؤُنَا ۖ فَأۡتِنَا بِمَا تَعِدُنَآ إِن كُنتَ مِنَ
+                        ٱلصَّٰدِقِينَ قَالُوٓاْ أَجِئۡتَنَا لِنَعۡبُدَ ٱللَّهَ
+                        وَحۡدَهُۥ وَنَذَرَ مَا كَانَ يَعۡبُدُ ءَابَآؤُنَا ۖ
+                        فَأۡتِنَا بِمَا تَعِدُنَآ إِن كُنتَ مِنَ ٱلصَّٰدِقِينَ
+                    </div>
+                    <div class="text-lg font-roboto">
+                        Segala puji bagi Allah, Tuhan1) semesta alam
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="px-3 py-2 ml-14 bg-[#466970] text-[15px] flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                >
+                    <i class="pi pi-file mr-1"></i> salin</button
+                ><button
+                    class="px-3 py-2 bg-[#466970] text-[15px] flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                >
+                    <i class="pi pi-caret-right"></i>
+                </button>
+            </div>
+        </div>
+        <hr class="my-4" />
+    </div>
+    <Foother />
+</template>
+
+<script>
+export default {};
+</script>
