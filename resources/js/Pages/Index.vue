@@ -1,0 +1,1275 @@
+<script setup>
+import { Head } from "@inertiajs/vue3";
+import TopBar from "@/Components/TopBar.vue";
+import Button from "primevue/button";
+import InputText from "primevue/inputtext";
+import Tooltip from "primevue/tooltip";
+import Footer from "@/Components/Footer.vue";
+</script>
+<script>
+export default {
+    directives: {
+        tooltip: Tooltip,
+    },
+};
+</script>
+<style lang="scss" scoped></style>
+
+<template>
+    <Head title="Home" />
+    <TopBar />
+    <div class="px-[70px] mt-32 font-arabic">
+        <div class="grid gap-10 grid-cols-4">
+            <div>
+                <div
+                    class="box-border w-full shadow-md rounded-lg bg-[#73959c5b] mt-3"
+                >
+                    <div
+                        class="capitalize px-3 py-1 bg-[#46697075] rounded-t-lg text-center font-bold text-[18px]"
+                    >
+                        pencarian populer
+                    </div>
+                    <div class="p-3 h-[200px] overflow-auto">
+                        <ul class="grid gap-1 list-none">
+                            <li
+                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
+                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
+                            >
+                                <a
+                                    href=""
+                                    class="text-[13px] subpixel-antialiased"
+                                    >&#9755;
+                                    <span class="font-bold"
+                                        >Lorem, ipsum dolor sit am...</span
+                                    ></a
+                                >
+                            </li>
+                            <li
+                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
+                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
+                            >
+                                <a
+                                    href=""
+                                    class="text-[13px] subpixel-antialiased"
+                                    >&#9755;
+                                    <span class="font-bold"
+                                        >Lorem, ipsum dolor sit am...</span
+                                    ></a
+                                >
+                            </li>
+                            <li
+                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
+                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
+                            >
+                                <a
+                                    href=""
+                                    class="text-[13px] subpixel-antialiased"
+                                    >&#9755;
+                                    <span class="font-bold"
+                                        >Lorem, ipsum dolor sit am...</span
+                                    ></a
+                                >
+                            </li>
+                            <li
+                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
+                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
+                            >
+                                <a
+                                    href=""
+                                    class="text-[13px] subpixel-antialiased"
+                                    >&#9755;
+                                    <span class="font-bold"
+                                        >Lorem, ipsum dolor sit am...</span
+                                    ></a
+                                >
+                            </li>
+                            <li
+                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
+                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
+                            >
+                                <a
+                                    href=""
+                                    class="text-[13px] subpixel-antialiased"
+                                    >&#9755;
+                                    <span class="font-bold"
+                                        >Lorem, ipsum dolor sit am...</span
+                                    ></a
+                                >
+                            </li>
+                            <li
+                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
+                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
+                            >
+                                <a
+                                    href=""
+                                    class="text-[13px] subpixel-antialiased"
+                                    >&#9755;
+                                    <span class="font-bold"
+                                        >Lorem, ipsum dolor sit am...</span
+                                    ></a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-2">
+                <div class="grid justify-items-center">
+                    <img src="/al-quran.png" class="w-[150px]" alt="" />
+                    <span class="capitalize font-bold text-[30px]"
+                        >tafsir al-quran digital</span
+                    >
+                    <div class="w-full">
+                        <form :action="route('web.result')">
+                            <div class="p-inputgroup">
+                                <InputText placeholder="cari topik" />
+                                <Button
+                                    type="submit"
+                                    icon="pi pi-search"
+                                    class="p-button-secondary"
+                                />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-9">
+            <div
+                class="capitalize text-[15px] font-bold flex items-center gap-2"
+            >
+                <i class="pi pi-angle-double-right"></i>
+                <span>daftar surah</span>
+            </div>
+            <hr class="h-1 bg-[#c6c1c1] rounded-lg" />
+            <div class="grid grid-cols-3 gap-4 py-3">
+                <a :href="route('web.detail-surah')">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div> </a
+                ><a href="">
+                    <div
+                        class="p-1.5 bg-white border border-[#466970] rounded-lg flex gap-4 items-center transition ease-in-out delay-150 duration-300 hover:shadow-md hover:scale-[1.02]"
+                    >
+                        <div
+                            class="w-[35px] flex justify-center items-cente p-1.5"
+                            style="background-image: url(/icon_number.svg)"
+                        >
+                            <span
+                                class="p-1.5 m-0 font-bold text-[12px] leading-4 text-center"
+                                >1</span
+                            >
+                        </div>
+                        <div class="flex-1">
+                            <div class="capitalize font-bold">
+                                al-fatihah
+                                <small class="font-normal">(pembuka)</small>
+                            </div>
+                            <div
+                                class="capitalize flex items-center gap-2 text-[10px]"
+                            >
+                                makkiyah
+                                <i
+                                    class="pi pi-bookmark-fill"
+                                    style="font-size: 6px"
+                                ></i>
+                                7 ayat
+                            </div>
+                        </div>
+                        <div class="font-bold text-[15px]">الفاتحة</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <Footer />
+</template>

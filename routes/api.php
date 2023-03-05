@@ -2,18 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Tightenco\Ziggy\Ziggy;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+Route::get('ziggy', fn () => response()->json(new Ziggy));
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::withoutMiddleware('api')->middleware(['session', 'api'])->group(function () {
+    Route::post('/entry/signin', 'Authc\UserController@api_signin')->name('api.entry.signin');
+    Route::post('/entry/signup', 'Authc\UserController@api_signup')->name('api.entry.signup');
+    Route::post('/entry/signout', 'Authc\UserController@api_signout')->name('api.entry.signout');
 });
