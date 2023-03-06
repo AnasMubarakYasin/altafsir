@@ -3,7 +3,7 @@ import { createPinia } from "pinia";
 // @ts-ignore
 import { createInertiaApp } from "@inertiajs/vue3";
 import { ZiggyVue } from "../../../../vendor/tightenco/ziggy/dist/vue.m";
-import Ziggy from "./lib/ziggy.js";
+import { get_routes } from "./lib/ziggy.js";
 
 const pinia = createPinia();
 
@@ -41,6 +41,7 @@ declare global {
 
 export default async function (context: AppCtx) {
     let layout = Layout
+    const Ziggy = await get_routes();
     if (context.allow_splash) {
         // @ts-ignore
         const module = await import("./Layouts/SplashScreen.vue")
