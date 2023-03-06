@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, inject } from "vue";
-import { router, Link, useForm } from "@inertiajs/vue3";
+import { router, Link, useForm, useRemember } from "@inertiajs/vue3";
 import {
     symRoundedArrowBack,
     symRoundedVisibility,
@@ -21,10 +21,13 @@ const emit = defineEmits({
 });
 const store = authc();
 const context = inject("context");
-const entry = context.to_entry()
+const entry = context.to_entry();
+const account = app().inject("__account__");
+console.log(account)
 const form = useForm({
-    name: props.name,
-    password: props.password,
+    name: account.name,
+    password: account.password,
+    remember: account.remember,
 });
 const helper = reactive({
     password: false,
@@ -120,8 +123,12 @@ async function submit(event) {
                         :disabled="form.processing"
                     />
                     <div class="flex gap-2">
-                        <div class="text-gray-800 font-medium">Already have an account?</div>
-                        <Link :href="entry.signup()" class="text-blue-700 hover:underline"
+                        <div class="text-gray-800 font-medium">
+                            Already have an account?
+                        </div>
+                        <Link
+                            :href="entry.signup()"
+                            class="text-blue-700 hover:underline"
                             >Sign Up</Link
                         >
                     </div>

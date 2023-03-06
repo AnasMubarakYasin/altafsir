@@ -7,6 +7,7 @@ const definitions: TableDef[] = [
         label: 'Number',
         field: 'number',
         input: "number",
+        align: 'center',
     },
     {
         name: 'name_arab',
@@ -25,6 +26,7 @@ const definitions: TableDef[] = [
         label: 'Ayat count',
         field: 'ayat_count',
         input: "number",
+        align: 'center',
     },
     {
         name: 'place',
@@ -43,6 +45,7 @@ const definitions: TableDef[] = [
         label: 'Description',
         field: 'description',
         input: "textarea",
+        align: 'left',
     },
 
 ];

@@ -1,6 +1,6 @@
 import contexts from "../contexts/index.js"
 import type AppCtx from "./app-ctx";
-import { createApp, App as AppVue } from "vue";
+import { createApp, App as AppVue, inject } from "vue";
 // @ts-ignore
 import { Promiseify } from "./helper.js";
 
@@ -82,7 +82,7 @@ export default class App {
             promise.resolver();
         });
         document.addEventListener("screen-ready", async () => {
-            
+
             document.dispatchEvent(new CustomEvent("splash-out"));
         });
         document.addEventListener("screen-show", async () => {
@@ -95,5 +95,11 @@ export default class App {
         })
         document.dispatchEvent(new CustomEvent("splash-in"));
         return promise;
+    }
+    provide(key: string, value: any) {
+        App.app_vue.provide(key, value);
+    }
+    inject(key: string) {
+        return inject(key);
     }
 }

@@ -6,6 +6,11 @@ export interface Entriable {
 export interface Panelable {
     to_panel(): Panel
 }
+export interface Credential {
+    name: string
+    password: string
+    remember: boolean
+}
 export interface Entry {
     name: string
     guest: boolean
@@ -14,6 +19,7 @@ export interface Entry {
     index?: () => string
     forgot_password?: () => string
     visit(): string
+    accounts?: () => Array<Credential>
 }
 export interface TableDef {
     name: string

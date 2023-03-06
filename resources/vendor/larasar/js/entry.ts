@@ -23,6 +23,15 @@ const entries: Entry[] = [
         signup() {
             return "/entry/signup"
         },
+        accounts() {
+            return [
+                {
+                    name: "super",
+                    password: "super",
+                    remember: true,
+                }
+            ]
+        }
     },
 ]
 
