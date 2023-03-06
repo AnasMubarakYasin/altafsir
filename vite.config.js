@@ -3,6 +3,10 @@ import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 import { quasar } from "@quasar/vite-plugin";
 import path from "path";
+import { fdir } from "fdir";
+
+const css = new fdir().withFullPaths().crawl("resources/css").sync();
+const js = new fdir().withFullPaths().crawl("resources/js").sync();
 
 export default defineConfig({
     resolve: {
@@ -12,7 +16,7 @@ export default defineConfig({
     },
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js', "resources/vendor/larasar/js/init.js"],
+            input: [...css, ...js, "resources/vendor/larasar/js/init.js"],
             refresh: true,
         }),
         vue({
