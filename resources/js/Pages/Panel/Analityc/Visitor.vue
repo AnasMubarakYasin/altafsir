@@ -1,6 +1,6 @@
 <script setup>
 import Table from "@larasar/js/Components/Table.vue";
-import { definitions, api } from "@larasar/js/definition/user";
+import { definitions, api } from "@larasar/js/definition/visitor";
 
 defineProps({
     data: {

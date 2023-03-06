@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
+use App\Models\Searcher;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,6 +14,15 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return inertia('Panel/Dashboard');
+        return inertia('Panel/Dashboard', [
+            'visitor' => [
+                'today' => Visitor::today(),
+                'yesterday' => Visitor::yesterday(),
+            ],
+            'searcher' => [
+                'today' => Searcher::today(),
+                'yesterday' => Searcher::yesterday(),
+            ],
+        ]);
     }
 }

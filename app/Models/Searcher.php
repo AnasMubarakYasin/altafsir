@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Visitor extends Model
+class Searcher extends Model
 {
     use HasFactory;
     protected $fillable = [];
@@ -15,16 +15,18 @@ class Visitor extends Model
     {
         $today = today()->setTime(0, 0);
         $tomorrow = today()->setTime(0, 0)->addDay();
-        return Visitor::whereBetween('created_at', [$today, $tomorrow])->get();
+        return Searcher::whereBetween('created_at', [$today, $tomorrow])->get();
     }
     static function yesterday()
     {
         $yesterday = today()->subDay()->setTime(0, 0);
         $today = today()->setTime(0, 0);
-        return Visitor::whereBetween('created_at', [$yesterday, $today])->get();
+        return Searcher::whereBetween('created_at', [$yesterday, $today])->get();
     }
-    static function log()
+    static function log(string $text)
     {
-        return Visitor::create([]);
+        return Searcher::create([
+            'text' => $text
+        ]);
     }
 }

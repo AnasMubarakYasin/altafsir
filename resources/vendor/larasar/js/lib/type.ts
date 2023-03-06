@@ -25,7 +25,7 @@ export interface TableDef {
     name: string
     label: string
     field: string | (() => string)
-    input: "text" | "textarea" | "number";
+    input: "text" | "textarea" | "number" | 'datetime';
     required?: boolean
     align?: 'left' | 'center' | 'right'
     sortable?: boolean

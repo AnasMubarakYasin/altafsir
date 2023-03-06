@@ -1,11 +1,20 @@
 <script setup>
-defineProps(["title", "count", "icon", "desc"]);
+import { router } from "@inertiajs/vue3";
+const $props = defineProps(["title", "count", "icon", "desc", "href", "store"]);
+function visit() {
+    if (!$props?.href) return;
+    if ($props.store) {
+        $props.store.set_active_link($props.href);
+    } else {
+        router.visit($props.href);
+    }
+}
 </script>
 <style lang="scss">
 @use "../../css/helper.scss";
 </style>
 <template>
-    <div class="paper">
+    <div class="paper" @click="visit">
         <div class="w-full flex items-center justify-between">
             <div class="flex flex-col">
                 <div

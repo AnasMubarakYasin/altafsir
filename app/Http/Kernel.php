@@ -76,5 +76,6 @@ class Kernel extends HttpKernel
         'larasar.inertia' => \App\Http\Middleware\LarasarInertia::class,
         'larasar.guest' => \App\Http\Middleware\LarasarGuest::class,
         'larasar.authc' => \App\Http\Middleware\LarasarAuthc::class,
+        'visitor.log' =>  \App\Http\Middleware\VisitorLog::class,
     ];
 }

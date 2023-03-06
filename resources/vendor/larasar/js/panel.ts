@@ -5,6 +5,8 @@ import {
     symRoundedLogout,
     symRoundedMenuBook,
     symRoundedFiberSmartRecord,
+    symRoundedGroups,
+    symRoundedQueryStats,
 } from "@quasar/extras/material-symbols-rounded";
 import { route } from "./lib/ziggy.js";
 // @ts-ignore
@@ -40,6 +42,17 @@ export default class Panel extends PanelBase {
                         index: route("web.panel.alquran.ayat.index"),
                     }
                 ]
+            },
+            {
+                tag: "Analitycs",
+                name: "Visitor",
+                icon: symRoundedGroups,
+                index: route("web.panel.analitycs.visitor.index"),
+            },
+            {
+                name: "Searcher",
+                icon: symRoundedQueryStats,
+                index: route("web.panel.analitycs.searcher.index"),
             },
             {
                 tag: "Accounts",

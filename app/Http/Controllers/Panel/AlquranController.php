@@ -7,7 +7,7 @@ use App\Models\Ayat;
 use App\Models\Surah;
 use Illuminate\Http\Request;
 
-class Alquran extends Controller
+class AlquranController extends Controller
 {
     /**
      * Handle the incoming request.
