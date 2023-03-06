@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8285f46efe316aac5ef06747773997d7",
+    "content-hash": "8c53db9e1b11553c2d86dbe3fad1fbb1",
     "packages": [
         {
             "name": "bladerlaiga/larasar",
-            "version": "0.1.33",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AnasMubarakYasin/larasar.git",
+                "reference": "c6f0776e9582ea1633aad4e2620305864ce114c2"
+            },
             "dist": {
-                "type": "path",
-                "url": "../bladerlaiga/larasar",
-                "reference": "1f2edaa4632bce3ce1888761e9c02d9b578d8a3e"
+                "type": "zip",
+                "url": "https://api.github.com/repos/AnasMubarakYasin/larasar/zipball/c6f0776e9582ea1633aad4e2620305864ce114c2",
+                "reference": "c6f0776e9582ea1633aad4e2620305864ce114c2",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "^10.1",
@@ -35,18 +41,30 @@
                     "Bladerlaiga\\Larasar\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "AnasMubarakYasin"
+                    "name": "Anas Mubarak Yasin",
+                    "email": "bladerlaiga.97@gmail.com",
+                    "homepage": "https://github.com/AnasMubarakYasin",
+                    "role": "Developer"
                 }
             ],
             "description": "Template of laravel and quasar",
-            "transport-options": {
-                "relative": true
-            }
+            "homepage": "https://github.com/AnasMubarakYasin/larasar",
+            "keywords": [
+                "laravel",
+                "php",
+                "quasar"
+            ],
+            "support": {
+                "issues": "https://github.com/AnasMubarakYasin/larasar/issues",
+                "source": "https://github.com/AnasMubarakYasin/larasar/tree/v1.0.0"
+            },
+            "time": "2023-03-06T11:10:01+00:00"
         },
         {
             "name": "brick/math",
