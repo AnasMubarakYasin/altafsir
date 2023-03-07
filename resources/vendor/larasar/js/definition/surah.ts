@@ -22,6 +22,12 @@ const definitions: TableDef[] = [
         input: "text",
     },
     {
+        name: 'name_id',
+        label: 'Name Id',
+        field: 'name_id',
+        input: "text",
+    },
+    {
         name: 'ayat_count',
         label: 'Ayat count',
         field: 'ayat_count',
@@ -32,12 +38,6 @@ const definitions: TableDef[] = [
         name: 'place',
         label: 'Place',
         field: 'place',
-        input: "text",
-    },
-    {
-        name: 'translate',
-        label: 'Translate',
-        field: 'translate',
         input: "text",
     },
     {

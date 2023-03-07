@@ -5,23 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Surah extends Model
+class Tafsir extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'number',
-        'name_arab',
-        'name_latin',
-        'name_id',
-        'ayat_count',
-        'place',
-        'description',
+        'text',
+        "ayat_id",
     ];
     protected $hidden = [];
     protected $casts = [];
-    public function ayats()
+    public function ayat()
     {
-        return $this->hasMany(Ayat::class);
+        return $this->belongsTo(Ayat::class, 'ayat_id');
     }
 }

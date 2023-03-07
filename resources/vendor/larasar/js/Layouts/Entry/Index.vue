@@ -40,7 +40,7 @@ function visit(link = "/", data = null) {
                     >
                         <div
                             v-for="entry of entries"
-                            class="relative w-[240px] grid content-start gap-2 p-2 sm:p-4 bg-white text-black rounded-lg shadow-lg"
+                            class="relative w-[160px] sm:w-[240px] grid content-start gap-2 p-2 sm:p-4 bg-white text-black rounded-lg shadow-lg"
                         >
                             <h2
                                 class="text-center text-lg text-gray-800 font-semibold"
@@ -110,7 +110,7 @@ function visit(link = "/", data = null) {
                         <div class="flex flex-wrap gap-2 sm:gap-4">
                             <button
                                 v-for="account of selected_user.accounts()"
-                                class="relative w-[380px] flex items-center content-start gap-4 p-2 sm:p-4 bg-white text-black hover:bg-gray-200 rounded-lg shadow-lg"
+                                class="relative w-[280px] sm:w-[380px] flex items-center content-start gap-4 p-2 sm:p-4 bg-white text-black hover:bg-gray-200 rounded-lg shadow-lg"
                                 @click="
                                     () => visit(selected_user.signin(), account)
                                 "

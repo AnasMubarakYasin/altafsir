@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surahs', function (Blueprint $table) {
+        Schema::create('tafsirs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
             $table->integer("number");
-            $table->string("name_arab");
-            $table->string("name_latin");
-            $table->string("name_id");
-            $table->string("place");
-            $table->integer("ayat_count");
-            $table->text("description")->fulltext();
+            $table->text("text")->fulltext();
+
+            $table->foreignId('ayat_id')->constrained('ayats')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('surahs');
+        Schema::dropIfExists('tafsirs');
     }
 };

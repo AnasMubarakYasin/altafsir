@@ -27,12 +27,12 @@ const store = authc();
 const context = inject("context");
 const entry = context.to_entry()
 const form = useForm({
-    name: props.name,
-    email: props.email,
-    remember: props.remember,
-    aggrement: props.aggrement,
-    password: props.password,
-    password_confirmation: props.password_confirmation,
+    name: /* props.name */ null,
+    email: /* props.email */ null,
+    remember: /* props.remember */ null,
+    aggrement: /* props.aggrement */ null,
+    password: /* props.password */ null,
+    password_confirmation: /* props.password_confirmation */ null,
 });
 const helper = reactive({
     password: false,
@@ -56,7 +56,7 @@ async function submit(event) {
     <Layout>
         <div class="w-screen h-screen grid place-content-center bg-gray-50">
             <div
-                class="relative sm:w-[400px] grid justify-items-center gap-2 bg-white p-2 sm:p-4 shadow-md rounded-md"
+                class="relative w-[300px] sm:w-[400px] grid justify-items-center gap-2 bg-white p-2 sm:p-4 shadow-md rounded-md"
             >
                 <q-btn
                     unelevated

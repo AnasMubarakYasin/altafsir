@@ -40,7 +40,11 @@ export default class Panel extends PanelBase {
                     {
                         name: "Ayat",
                         index: route("web.panel.alquran.ayat.index"),
-                    }
+                    },
+                    {
+                        name: "Tafsir",
+                        index: route("web.panel.alquran.tafsir.index"),
+                    },
                 ]
             },
             {

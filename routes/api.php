@@ -19,3 +19,7 @@ Route::delete('/surah', 'SurahController@delete')->name('api.surah.delete');
 Route::post('/ayat', 'AyatController@create')->name('api.ayat.create');
 Route::patch('/ayat/{ayat}', 'AyatController@update')->name('api.ayat.update');
 Route::delete('/ayat', 'AyatController@delete')->name('api.ayat.delete');
+
+Route::post('/tafsir', 'AyatController@create')->name('api.tafsir.create');
+Route::patch('/tafsir/{tafsir}', 'AyatController@update')->name('api.tafsir.update');
+Route::delete('/tafsir', 'AyatController@delete')->name('api.tafsir.delete');

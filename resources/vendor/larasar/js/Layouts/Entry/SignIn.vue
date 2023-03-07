@@ -23,11 +23,10 @@ const store = authc();
 const context = inject("context");
 const entry = context.to_entry();
 const account = app().inject("__account__");
-console.log(account)
 const form = useForm({
-    name: account.name,
-    password: account.password,
-    remember: account.remember,
+    name: account?.name,
+    password: account?.password,
+    remember: account?.remember,
 });
 const helper = reactive({
     password: false,
@@ -50,7 +49,7 @@ async function submit(event) {
     <Layout>
         <div class="w-screen h-screen grid place-content-center bg-gray-50">
             <div
-                class="relative sm:w-[400px] grid justify-items-center gap-2 bg-white p-2 sm:p-4 shadow-md rounded-md"
+                class="relative w-[300px] sm:w-[400px] grid justify-items-center gap-2 bg-white p-2 sm:p-4 shadow-md rounded-md"
             >
                 <q-btn
                     unelevated

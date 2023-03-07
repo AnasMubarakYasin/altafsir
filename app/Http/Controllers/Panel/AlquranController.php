@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Panel;
 use App\Http\Controllers\Controller;
 use App\Models\Ayat;
 use App\Models\Surah;
+use App\Models\Tafsir;
 use Illuminate\Http\Request;
 
 class AlquranController extends Controller
@@ -29,6 +30,12 @@ class AlquranController extends Controller
     {
         return inertia("Panel/Alquran/Ayat", [
             'data' => Ayat::all(),
+        ]);
+    }
+    public function tafsir(Request $request)
+    {
+        return inertia("Panel/Alquran/Tafsir", [
+            'data' => Tafsir::all(),
         ]);
     }
 }

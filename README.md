@@ -15,5 +15,5 @@ npm i
 php artisan env:decrypt --key=***
 php artisan migrate
 php artisan db:seed
-php artisan db:seed --class=Database\Seeders\AlquranSeeder
+php artisan db:seed --class=AlquranSeeder
 ```

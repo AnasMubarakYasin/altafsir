@@ -21,6 +21,7 @@ Route::middleware(['larasar.authc:web,web.entry.index', 'larasar.inertia'])->gro
     Route::get('/panel/alquran', 'Panel\AlquranController')->name('web.panel.alquran.index');
     Route::get('/panel/alquran/surah', 'Panel\AlquranController')->name('web.panel.alquran.surah.index');
     Route::get('/panel/alquran/ayat', 'Panel\AlquranController@ayat')->name('web.panel.alquran.ayat.index');
+    Route::get('/panel/alquran/tafsir', 'Panel\AlquranController@tafsir')->name('web.panel.alquran.tafsir.index');
     Route::get('/panel/analitycs/visitor', 'Panel\AnalitycController@visitor')->name('web.panel.analitycs.visitor.index');
     Route::get('/panel/analitycs/searcher', 'Panel\AnalitycController@searcher')->name('web.panel.analitycs.searcher.index');
     Route::get('/panel/users', 'Panel\DashboardController')->name('web.panel.users.index');

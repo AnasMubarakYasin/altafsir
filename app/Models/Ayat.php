@@ -15,6 +15,7 @@ class Ayat extends Model
         "text_arab",
         "text_latin",
         "audios",
+        "surah_id",
     ];
     protected $hidden = [];
     protected $casts = [
@@ -23,5 +24,9 @@ class Ayat extends Model
     public function surah()
     {
         return $this->belongsTo(Surah::class, 'surah_id');
+    }
+    public function tafsir()
+    {
+        return $this->hasOne(Tafsir::class);
     }
 }

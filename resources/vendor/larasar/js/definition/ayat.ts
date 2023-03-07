@@ -10,7 +10,7 @@ const definitions: TableDef[] = [
     },
     {
         name: "text_id",
-        label: "Text",
+        label: "Text Id",
         field: "text_id",
         input: "text"
     },
