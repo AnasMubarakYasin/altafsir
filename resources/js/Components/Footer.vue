@@ -12,8 +12,7 @@ import Button from "primevue/button";
     </div>
     <transition name="back-to-top-fade">
         <div
-            class="vue-back-to-top"
-            :style="`bottom:${this.bottom};right:${this.right};`"
+            class="vue-back-to-top bottom-10 right-8"
             v-show="visible"
             @click="backToTop"
         >

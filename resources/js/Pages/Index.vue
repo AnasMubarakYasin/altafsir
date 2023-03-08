@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
+import { Head, Link, router } from "@inertiajs/vue3";
 import TopBar from "@/Components/TopBar.vue";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
@@ -48,16 +48,21 @@ export default {
                             <li
                                 v-for="item in log"
                                 class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'tes'"
+                                v-tooltip.top="item.text"
                             >
-                                <a
-                                    href=""
+                                <button
+                                    @click="
+                                        router.get(route('web.result'), {
+                                            search: item.text,
+                                        })
+                                    "
                                     class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
+                                >
+                                    &#9755;
                                     <span class="font-bold">{{
                                         item.text
-                                    }}</span></a
-                                >
+                                    }}</span>
+                                </button>
                             </li>
                         </ul>
                     </div>

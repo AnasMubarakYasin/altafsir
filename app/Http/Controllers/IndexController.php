@@ -16,7 +16,7 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         return inertia('Index', [
-            'data' => Surah::all(),
+            'data' => Surah::all()->sortBy('number')->values(),
             'log' => Searcher::all(),
         ]);
     }
@@ -27,17 +27,18 @@ class IndexController extends Controller
         if ($keyword) {
             Searcher::log($keyword);
         }
-        $result = Kategory::with("ayats")->with("ayats.surah")->with("ayats.tafsir")->whereFullText("name", $keyword)->first();
+        $result = Kategory::with("ayats")->with("ayats.surah")->with("ayats.tafsir")->where('name', 'like', "%" . $keyword . "%")->first();
         return inertia('Result', [
             'data' => $result,
-            'result' => $keyword
+            'result' => $keyword,
+            'log' => Searcher::all(),
         ]);
     }
 
     public function detail_surah(Surah $surah)
     {
         return inertia('DetailSurah', [
-            'data' => $surah->ayats()->get(),
+            'data' => $surah->ayats()->get()->sortBy('number')->values(),
             'surah' => $surah
         ]);
     }

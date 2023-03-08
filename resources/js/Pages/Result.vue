@@ -16,6 +16,11 @@ defineProps({
         default: () => "",
         required: true,
     },
+    log: {
+        default: () => [],
+        type: Array,
+        required: true,
+    },
 });
 </script>
 
@@ -36,82 +41,23 @@ defineProps({
                     <div class="p-3 h-[200px] overflow-auto">
                         <ul class="grid gap-1 list-none">
                             <li
+                                v-for="item in log"
                                 class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
+                                v-tooltip.top="item.text"
                             >
-                                <a
-                                    href=""
+                                <button
+                                    @click="
+                                        router.get(route('web.result'), {
+                                            search: item.text,
+                                        })
+                                    "
                                     class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
                                 >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
+                                    &#9755;
+                                    <span class="font-bold">{{
+                                        item.text
+                                    }}</span>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -181,7 +127,9 @@ defineProps({
                                     <span class="capitalize text-[16px]"
                                         >tafsir</span
                                     >
-                                    <span>{{ ayat.tafsir.text }}</span>
+                                    <span class="line-clamp-2">{{
+                                        ayat.tafsir.text
+                                    }}</span>
                                 </div>
                                 <Link
                                     :href="
