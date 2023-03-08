@@ -1,4 +1,4 @@
-const plugin = require('tailwindcss/plugin')
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -14,17 +14,18 @@ module.exports = {
     theme: {},
 
     plugins: [
-        plugin(function({ addUtilities }) {
+        plugin(function ({ addUtilities }) {
             addUtilities({
-                '.font-arabic': {
-                    'font-family': 'Amiri',
+                ".font-arabic": {
+                    "font-family": "Amiri",
                 },
-                '.font-public-sans': {
-                    'font-family': '"Public Sans"',
+                ".font-public-sans": {
+                    "font-family": '"Public Sans"',
                 },
-            })
+            });
         }),
         // require('@tailwindcss/forms'),
         // require('@tailwindcss/typography'),
+        require("@tailwindcss/line-clamp"),
     ],
 };
