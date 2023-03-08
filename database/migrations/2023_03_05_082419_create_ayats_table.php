@@ -22,6 +22,7 @@ return new class extends Migration
             $table->json("audios")->default("[]");
 
             $table->foreignId('surah_id')->constrained('surahs')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('kategorie_id')->nullable()->constrained('kategories')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

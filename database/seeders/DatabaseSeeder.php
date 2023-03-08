@@ -23,5 +23,39 @@ class DatabaseSeeder extends Seeder
             'email' => 'super@altafsir.ac.id',
             'password' => 'super',
         ]);
+
+        \App\Models\Kategory::create([
+            'name' => 'perencanaan wilayah dan kota',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'tata ruang',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'lingkungan pelestarian dan larangan berbuat kerusakan',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'permukiman',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'pariwisata',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'pembangunan atau pengembangan wilayah',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'bencana alam',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'sosial',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'ekonomi',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'prasarana wilayah',
+        ]);
+        \App\Models\Kategory::create([
+            'name' => 'kesesuaian lahan',
+        ]);
     }
 }

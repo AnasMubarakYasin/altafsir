@@ -15,7 +15,7 @@ class Ayat extends Model
         "text_arab",
         "text_latin",
         "audios",
-        "surah_id",
+        "kategorie_id",
     ];
     protected $hidden = [];
     protected $casts = [

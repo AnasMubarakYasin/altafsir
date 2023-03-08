@@ -7,6 +7,7 @@ import {
     symRoundedFiberSmartRecord,
     symRoundedGroups,
     symRoundedQueryStats,
+    symRoundedDataset,
 } from "@quasar/extras/material-symbols-rounded";
 import { route } from "./lib/ziggy.js";
 // @ts-ignore
@@ -63,6 +64,11 @@ export default class Panel extends PanelBase {
                 name: "Users",
                 icon: symRoundedGroup,
                 index: route("web.panel.users.index"),
+            },
+            {
+                name: "Kategory",
+                icon: symRoundedDataset,
+                index: route("web.panel.kategory.index"),
             },
         ]
     }
