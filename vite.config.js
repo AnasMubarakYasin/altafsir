@@ -8,6 +8,9 @@ import { fdir } from "fdir";
 const pages = new fdir().withFullPaths().crawl("resources/js/Pages").sync();
 
 export default defineConfig({
+    build: {
+        target: "esnext",
+    },
     resolve: {
         alias: {
             '@larasar': path.resolve(__dirname, './resources/vendor/larasar'),
