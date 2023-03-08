@@ -17,14 +17,17 @@ class IndexController extends Controller
     {
         return inertia('Index', [
             'data' => Surah::all(),
+            'log' => Searcher::all(),
         ]);
     }
 
     public function result(Request $request)
     {
         $keyword = $request->search;
-        Searcher::log($keyword);
-        $result = Kategory::whereFullText("name", $keyword)->first()->load("ayats")->load("ayats.surah");
+        if ($keyword) {
+            Searcher::log($keyword);
+        }
+        $result = Kategory::with("ayats")->with("ayats.surah")->with("ayats.tafsir")->whereFullText("name", $keyword)->first();
         return inertia('Result', [
             'data' => $result,
             'result' => $keyword
@@ -39,8 +42,12 @@ class IndexController extends Controller
         ]);
     }
 
-    public function detail_tafsir(Request $request)
+    public function detail_tafsir(Ayat $ayat)
     {
-        return inertia('DetailTafsir');
+        return inertia('DetailTafsir', [
+            'surah' => $ayat->surah()->first(),
+            'ayat' => $ayat,
+            'tafsir' => $ayat->tafsir()->first()
+        ]);
     }
 }

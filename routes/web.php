@@ -7,7 +7,7 @@ Route::middleware(['visitor.log', 'inertia'])->group(function () {
     Route::get('/', 'IndexController')->name('web.index');
     Route::get('/result', 'IndexController@result')->name('web.result');
     Route::get('/detail_surah/{surah}', 'IndexController@detail_surah')->name('web.detail-surah');
-    Route::get('/detail_tafsir', 'IndexController@detail_tafsir')->name('web.detail-tafsir');
+    Route::get('/detail_tafsir/{ayat}', 'IndexController@detail_tafsir')->name('web.detail-tafsir');
 });
 
 Route::middleware(['larasar.guest:web,web.panel.index', 'larasar.inertia'])->group(function () {

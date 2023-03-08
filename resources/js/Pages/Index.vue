@@ -1,5 +1,5 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import TopBar from "@/Components/TopBar.vue";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
@@ -12,6 +12,11 @@ defineProps({
         type: Array,
         required: true,
     },
+    log: {
+        default: () => [],
+        type: Array,
+        required: true,
+    },
 });
 </script>
 <script>
@@ -19,6 +24,7 @@ export default {
     directives: {
         tooltip: Tooltip,
     },
+    components: { Link },
 };
 </script>
 <style lang="scss" scoped></style>
@@ -40,81 +46,17 @@ export default {
                     <div class="p-3 h-[200px] overflow-auto">
                         <ul class="grid gap-1 list-none">
                             <li
+                                v-for="item in log"
                                 class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
+                                v-tooltip.top="'tes'"
                             >
                                 <a
                                     href=""
                                     class="text-[13px] subpixel-antialiased"
                                     >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
-                                >
-                            </li>
-                            <li
-                                class="rounded-lg p-1 bg-[#4f798169] hover:bg-[#46697796]"
-                                v-tooltip.top="'Lorem, ipsum dolor sit am...'"
-                            >
-                                <a
-                                    href=""
-                                    class="text-[13px] subpixel-antialiased"
-                                    >&#9755;
-                                    <span class="font-bold"
-                                        >Lorem, ipsum dolor sit am...</span
-                                    ></a
+                                    <span class="font-bold">{{
+                                        item.text
+                                    }}</span></a
                                 >
                             </li>
                         </ul>
@@ -154,7 +96,7 @@ export default {
             </div>
             <hr class="h-1 bg-[#c6c1c1] rounded-lg" />
             <div class="grid grid-cols-3 gap-4 py-3">
-                <a
+                <Link
                     v-for="item in data"
                     :href="route('web.detail-surah', { surah: item.id })"
                 >
@@ -192,7 +134,7 @@ export default {
                             {{ item.name_arab }}
                         </div>
                     </div>
-                </a>
+                </Link>
             </div>
         </div>
     </div>

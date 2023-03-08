@@ -18,7 +18,7 @@ defineProps({
 </script>
 
 <template>
-    <Head title="Detail Surah Al-Fatihah" />
+    <Head title="Detail Surah" {{ surah.name_latin }} />
     <TopBar />
     <div class="mt-20 font-arabic w-full px-36">
         <div

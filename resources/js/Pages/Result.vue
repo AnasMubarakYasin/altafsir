@@ -1,17 +1,15 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import TopBar from "@/Components/TopBar.vue";
 import InputText from "primevue/inputtext";
 import Button from "primevue/button";
 import Tooltip from "primevue/tooltip";
 import Footer from "@/Components/Footer.vue";
 
-const $props = defineProps({
+defineProps({
     data: {
-        default: () => ({
-            ayats: [],
-        }),
-        type: Object,
+        default: () => [],
+        type: Array,
         required: true,
     },
     result: {
@@ -19,7 +17,6 @@ const $props = defineProps({
         required: true,
     },
 });
-console.log($props.data);
 </script>
 
 <template>
@@ -145,16 +142,28 @@ console.log($props.data);
                     >
                     <hr class="h-[2px] rounded-lg bg-[#35414174]" />
                     <div class="mt-2">
-                        <div v-for="ayat of data.ayats">
+                        <div v-if="data == null" class="h-[358px]">
+                            <div
+                                class="grid place-content-center place-items-center pt-10 text-neutral-400 opacity-60"
+                            >
+                                <i class="pi pi-ban text-[70px]"></i>
+                                <span class="text-[20px]">no data</span>
+                            </div>
+                        </div>
+                        <div v-else v-for="ayat of data.ayats">
                             <div class="grid gap-3">
-                                <a
-                                    :href="route('web.detail-tafsir')"
+                                <Link
+                                    :href="
+                                        route('web.detail-tafsir', {
+                                            ayat: ayat.id,
+                                        })
+                                    "
                                     class="capitalize text-[16px] text-[#1e6f8d] font-bold flex items-center"
                                     ><i
                                         class="pi pi-angle-double-right mr-1"
                                     ></i>
-                                    surah {{ ayat.surah.name_latin }}</a
-                                >
+                                    surah {{ ayat.surah.name_latin }}
+                                </Link>
                                 <div
                                     class="flex justify-end font-medium text-[25px]"
                                 >
@@ -172,18 +181,17 @@ console.log($props.data);
                                     <span class="capitalize text-[16px]"
                                         >tafsir</span
                                     >
-                                    <span
-                                        >Pada ayat di atas, Allah memulai
-                                        firman-Nya dengan menyebut “Basmalah”
-                                        untuk mengajarkan kepada hamba-Nya agar
-                                        memulai suatu perbuatan...</span
-                                    >
+                                    <span>{{ ayat.tafsir.text }}</span>
                                 </div>
-                                <a
-                                    :href="route('web.detail-tafsir')"
+                                <Link
+                                    :href="
+                                        route('web.detail-tafsir', {
+                                            ayat: ayat.id,
+                                        })
+                                    "
                                     class="ml-5 p-3 py-1 bg-[#466970] text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
                                 >
-                                    Detail</a
+                                    Detail</Link
                                 >
                             </div>
                             <hr class="my-4" />
@@ -201,5 +209,6 @@ export default {
     directives: {
         tooltip: Tooltip,
     },
+    components: { Link },
 };
 </script>
