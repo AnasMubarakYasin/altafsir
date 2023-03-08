@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Searcher extends Model
 {
     use HasFactory;
-    protected $fillable = [];
+    protected $fillable = [
+        "text"
+    ];
     protected $hidden = [];
     protected $casts = [];
     static function today()

@@ -5,6 +5,21 @@ import InputText from "primevue/inputtext";
 import Button from "primevue/button";
 import Tooltip from "primevue/tooltip";
 import Footer from "@/Components/Footer.vue";
+
+const $props = defineProps({
+    data: {
+        default: () => ({
+            ayats: [],
+        }),
+        type: Object,
+        required: true,
+    },
+    result: {
+        default: () => "",
+        required: true,
+    },
+});
+console.log($props.data);
 </script>
 
 <template>
@@ -108,9 +123,12 @@ import Footer from "@/Components/Footer.vue";
             <div class="col-span-2">
                 <div class="grid justify-items-center">
                     <div class="w-full">
-                        <form :action="route('beranda.result')">
+                        <form :action="route('web.result')">
                             <div class="p-inputgroup">
-                                <InputText placeholder="cari topik" />
+                                <InputText
+                                    placeholder="cari topik"
+                                    name="search"
+                                />
                                 <Button
                                     type="submit"
                                     icon="pi pi-search"
@@ -122,168 +140,54 @@ import Footer from "@/Components/Footer.vue";
                 </div>
                 <div class="mt-3">
                     <span class="capitalize text-[18px]"
-                        >hasil pencarian untuk '<span class="font-bold"
-                            >result</span
-                        >'</span
+                        >hasil pencarian untuk '
+                        <span class="font-bold"> {{ result }} </span> '</span
                     >
                     <hr class="h-[2px] rounded-lg bg-[#35414174]" />
                     <div class="mt-2">
-                        <div class="grid gap-3">
-                            <a
-                                :href="route('beranda.detail-tafsir')"
-                                class="capitalize text-[16px] text-[#1e6f8d] font-bold flex items-center"
-                                ><i class="pi pi-angle-double-right mr-1"></i>
-                                surah al-fatihah</a
-                            >
-                            <div
-                                class="flex justify-end font-medium text-[25px]"
-                            >
-                                .... اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ
+                        <div v-for="ayat of data.ayats">
+                            <div class="grid gap-3">
+                                <a
+                                    :href="route('web.detail-tafsir')"
+                                    class="capitalize text-[16px] text-[#1e6f8d] font-bold flex items-center"
+                                    ><i
+                                        class="pi pi-angle-double-right mr-1"
+                                    ></i>
+                                    surah {{ ayat.surah.name_latin }}</a
+                                >
+                                <div
+                                    class="flex justify-end font-medium text-[25px]"
+                                >
+                                    {{ ayat.text_arab }}
+                                </div>
+                                <div class="ml-5 grid">
+                                    <span class="capitalize text-[16px]"
+                                        >terjemahan</span
+                                    >
+                                    <span>
+                                        {{ ayat.text_id }}
+                                    </span>
+                                </div>
+                                <div class="ml-5 grid">
+                                    <span class="capitalize text-[16px]"
+                                        >tafsir</span
+                                    >
+                                    <span
+                                        >Pada ayat di atas, Allah memulai
+                                        firman-Nya dengan menyebut “Basmalah”
+                                        untuk mengajarkan kepada hamba-Nya agar
+                                        memulai suatu perbuatan...</span
+                                    >
+                                </div>
+                                <a
+                                    :href="route('web.detail-tafsir')"
+                                    class="ml-5 p-3 py-1 bg-[#466970] text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                                >
+                                    Detail</a
+                                >
                             </div>
-                            <div class="ml-5 grid">
-                                <span class="capitalize text-[16px]"
-                                    >terjemahan</span
-                                >
-                                <span
-                                    >Segala puji bagi Allah, Tuhan1) semesta
-                                    alam ....</span
-                                >
-                            </div>
-                            <div class="ml-5 grid">
-                                <span class="capitalize text-[16px]"
-                                    >tafsir</span
-                                >
-                                <span
-                                    >Pada ayat di atas, Allah memulai firman-Nya
-                                    dengan menyebut “Basmalah” untuk mengajarkan
-                                    kepada hamba-Nya agar memulai suatu
-                                    perbuatan...</span
-                                >
-                            </div>
-                            <a
-                                :href="route('beranda.detail-tafsir')"
-                                class="ml-5 p-3 py-1 bg-[#466970] text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
-                                >Detailnya</a
-                            >
+                            <hr class="my-4" />
                         </div>
-                        <hr class="my-4" />
-                        <div class="grid gap-3">
-                            <a
-                                :href="route('beranda.detail-tafsir')"
-                                class="capitalize text-[16px] text-[#1e6f8d] font-bold flex items-center"
-                                ><i class="pi pi-angle-double-right mr-1"></i>
-                                surah al-fatihah</a
-                            >
-                            <div
-                                class="flex justify-end font-medium text-[25px]"
-                            >
-                                .... اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ
-                            </div>
-                            <div class="ml-5 grid">
-                                <span class="capitalize text-[16px]"
-                                    >terjemahan</span
-                                >
-                                <span
-                                    >Segala puji bagi Allah, Tuhan1) semesta
-                                    alam ....</span
-                                >
-                            </div>
-                            <div class="ml-5 grid">
-                                <span class="capitalize text-[16px]"
-                                    >tafsir</span
-                                >
-                                <span
-                                    >Pada ayat di atas, Allah memulai firman-Nya
-                                    dengan menyebut “Basmalah” untuk mengajarkan
-                                    kepada hamba-Nya agar memulai suatu
-                                    perbuatan...</span
-                                >
-                            </div>
-                            <a
-                                :href="route('beranda.detail-tafsir')"
-                                class="ml-5 p-3 py-1 bg-[#466970] text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
-                                >Detailnya</a
-                            >
-                        </div>
-                        <hr class="my-4" />
-                        <div class="grid gap-3">
-                            <a
-                                :href="route('beranda.detail-tafsir')"
-                                class="capitalize text-[16px] text-[#1e6f8d] font-bold flex items-center"
-                                ><i class="pi pi-angle-double-right mr-1"></i>
-                                surah al-fatihah</a
-                            >
-                            <div
-                                class="flex justify-end font-medium text-[25px]"
-                            >
-                                .... اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ
-                            </div>
-                            <div class="ml-5 grid">
-                                <span class="capitalize text-[16px]"
-                                    >terjemahan</span
-                                >
-                                <span
-                                    >Segala puji bagi Allah, Tuhan1) semesta
-                                    alam ....</span
-                                >
-                            </div>
-                            <div class="ml-5 grid">
-                                <span class="capitalize text-[16px]"
-                                    >tafsir</span
-                                >
-                                <span
-                                    >Pada ayat di atas, Allah memulai firman-Nya
-                                    dengan menyebut “Basmalah” untuk mengajarkan
-                                    kepada hamba-Nya agar memulai suatu
-                                    perbuatan...</span
-                                >
-                            </div>
-                            <a
-                                :href="route('beranda.detail-tafsir')"
-                                class="ml-5 p-3 py-1 bg-[#466970] text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
-                                >Detailnya</a
-                            >
-                        </div>
-                        <hr class="my-4" />
-                        <div class="grid gap-3">
-                            <a
-                                :href="route('beranda.detail-tafsir')"
-                                class="capitalize text-[16px] text-[#1e6f8d] font-bold flex items-center"
-                                ><i class="pi pi-angle-double-right mr-1"></i>
-                                surah al-fatihah</a
-                            >
-                            <div
-                                class="flex justify-end font-medium text-[25px]"
-                            >
-                                .... اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ
-                            </div>
-                            <div class="ml-5 grid">
-                                <span class="capitalize text-[16px]"
-                                    >terjemahan</span
-                                >
-                                <span
-                                    >Segala puji bagi Allah, Tuhan1) semesta
-                                    alam ....</span
-                                >
-                            </div>
-                            <div class="ml-5 grid">
-                                <span class="capitalize text-[16px]"
-                                    >tafsir</span
-                                >
-                                <span
-                                    >Pada ayat di atas, Allah memulai firman-Nya
-                                    dengan menyebut “Basmalah” untuk mengajarkan
-                                    kepada hamba-Nya agar memulai suatu
-                                    perbuatan...</span
-                                >
-                            </div>
-                            <a
-                                :href="route('beranda.detail-tafsir')"
-                                class="ml-5 p-3 py-1 bg-[#466970] text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
-                                >Detailnya</a
-                            >
-                        </div>
-                        <hr class="my-4" />
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ class StoreAyatRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StoreAyatRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "number" => 'required|string',
+            "text_id" => 'required|string',
+            "text_arab" => 'required|string',
+            "text_latin" => 'required|string',
+            "audios" => 'required|string',
+            "kategorie_id" => 'nullable|integer'
         ];
     }
 }

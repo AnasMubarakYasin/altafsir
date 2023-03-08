@@ -11,7 +11,7 @@ class UpdateAyatRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class UpdateAyatRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "number" => 'nullable|string',
+            "text_id" => 'nullable|string',
+            "text_arab" => 'nullable|string',
+            "text_latin" => 'nullable|string',
+            "audios" => 'nullable|string',
+            "kategorie_id" => 'nullable|integer'
         ];
     }
 }

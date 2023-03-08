@@ -9,6 +9,12 @@ const definitions: TableDef[] = [
         input: "number"
     },
     {
+        name: "kategorie_id",
+        label: "Kategori ID",
+        field: "kategorie_id",
+        input: "text"
+    },
+    {
         name: "text_id",
         label: "Text Id",
         field: "text_id",

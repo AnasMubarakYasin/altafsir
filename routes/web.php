@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['visitor.log', 'inertia'])->group(function () {
     Route::get('/', 'IndexController')->name('web.index');
-    Route::get('/result', 'IndexController@result')->name('web.result');    
-
-    Route::get('/', 'IndexController')->name('web.detail-surah');
+    Route::get('/result', 'IndexController@result')->name('web.result');
+    Route::get('/detail_surah/{surah}', 'IndexController@detail_surah')->name('web.detail-surah');
+    Route::get('/detail_tafsir', 'IndexController@detail_tafsir')->name('web.detail-tafsir');
 });
 
 Route::middleware(['larasar.guest:web,web.panel.index', 'larasar.inertia'])->group(function () {
@@ -25,4 +25,7 @@ Route::middleware(['larasar.authc:web,web.entry.index', 'larasar.inertia'])->gro
     Route::get('/panel/analitycs/visitor', 'Panel\AnalitycController@visitor')->name('web.panel.analitycs.visitor.index');
     Route::get('/panel/analitycs/searcher', 'Panel\AnalitycController@searcher')->name('web.panel.analitycs.searcher.index');
     Route::get('/panel/users', 'Panel\DashboardController')->name('web.panel.users.index');
+
+    Route::get('/panel/users', 'Panel\UserController@index')->name('web.panel.users.index');
+    Route::get('/panel/kategory', 'Panel\KategoryController@index')->name('web.panel.kategory.index');
 });

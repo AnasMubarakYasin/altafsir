@@ -10,6 +10,7 @@ Route::withoutMiddleware('api')->middleware(['session', 'api'])->group(function 
     Route::post('/entry/signin', 'Authc\UserController@api_signin')->name('api.entry.signin');
     Route::post('/entry/signup', 'Authc\UserController@api_signup')->name('api.entry.signup');
     Route::post('/entry/signout', 'Authc\UserController@api_signout')->name('api.entry.signout');
+    Route::post('/panel/kategory', 'KategoryController@create_api')->name('api.panel.kategory');
 });
 
 Route::post('/surah', 'SurahController@create')->name('api.surah.create');
@@ -20,6 +21,12 @@ Route::post('/ayat', 'AyatController@create')->name('api.ayat.create');
 Route::patch('/ayat/{ayat}', 'AyatController@update')->name('api.ayat.update');
 Route::delete('/ayat', 'AyatController@delete')->name('api.ayat.delete');
 
+<<<<<<< Updated upstream
 Route::post('/tafsir', 'AyatController@create')->name('api.tafsir.create');
 Route::patch('/tafsir/{tafsir}', 'AyatController@update')->name('api.tafsir.update');
 Route::delete('/tafsir', 'AyatController@delete')->name('api.tafsir.delete');
+=======
+Route::post('/kategory', 'KategoryController@create_api')->name('api.kategory.create');
+Route::patch('/kategory/{kategory}', 'KategoryController@update')->name('api.kategory.update');
+Route::delete('/kategory', 'KategoryController@delete')->name('api.kategory.delete');
+>>>>>>> Stashed changes
