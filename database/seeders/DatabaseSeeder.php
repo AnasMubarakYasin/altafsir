@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Ayat;
+use App\Models\Kategory;
 use App\Models\Surah;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;

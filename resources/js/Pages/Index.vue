@@ -32,9 +32,9 @@ export default {
 <template>
     <Head title="Home" />
     <TopBar />
-    <div class="px-[70px] mt-32 font-arabic">
-        <div class="grid gap-10 grid-cols-4">
-            <div>
+    <div class="px-[25px] md:px-[70px] mt-32 font-arabic">
+        <div class="grid gap-10 md:grid-cols-4 grid-cols-none">
+            <div class="hidden md:block">
                 <div
                     class="box-border w-full shadow-md rounded-lg bg-[#73959c5b] mt-3"
                 >
@@ -56,7 +56,7 @@ export default {
                                             search: item.text,
                                         })
                                     "
-                                    class="text-[13px] subpixel-antialiased"
+                                    class="text-[13px] subpixel-antialiased w-full text-start line-clamp-1"
                                 >
                                     &#9755;
                                     <span class="font-bold">{{
@@ -71,7 +71,7 @@ export default {
             <div class="col-span-2">
                 <div class="grid justify-items-center">
                     <img src="/al-quran.png" class="w-[150px]" alt="" />
-                    <span class="capitalize font-bold text-[30px]"
+                    <span class="capitalize font-bold text-[30px] text-center"
                         >tafsir al-quran digital</span
                     >
                     <div class="w-full">
@@ -100,7 +100,7 @@ export default {
                 <span>daftar surah</span>
             </div>
             <hr class="h-1 bg-[#c6c1c1] rounded-lg" />
-            <div class="grid grid-cols-3 gap-4 py-3">
+            <div class="grid grid-cols-none md:grid-cols-3 gap-4 py-3">
                 <Link
                     v-for="item in data"
                     :href="route('web.detail-surah', { surah: item.id })"
@@ -121,7 +121,7 @@ export default {
                             <div class="capitalize font-bold">
                                 {{ item.name_latin }}
                                 <small class="font-normal"
-                                    >({{ item.translate }})</small
+                                    >({{ item.name_id }})</small
                                 >
                             </div>
                             <div

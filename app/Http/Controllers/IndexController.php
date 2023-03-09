@@ -7,6 +7,7 @@ use App\Models\Kategory;
 use App\Models\Searcher;
 use App\Models\Surah;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -17,7 +18,10 @@ class IndexController extends Controller
     {
         return inertia('Index', [
             'data' => Surah::all()->sortBy('number')->values(),
-            'log' => Searcher::all(),
+            'log' => Searcher::select('text')
+                ->groupBy('text')
+                ->orderByRaw('COUNT(*) DESC')
+                ->get(),
         ]);
     }
 
@@ -31,7 +35,10 @@ class IndexController extends Controller
         return inertia('Result', [
             'data' => $result,
             'result' => $keyword,
-            'log' => Searcher::all(),
+            'log' => Searcher::select('text')
+                ->groupBy('text')
+                ->orderByRaw('COUNT(*) DESC')
+                ->get(),
         ]);
     }
 

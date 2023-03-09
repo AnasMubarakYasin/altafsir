@@ -25,10 +25,10 @@ defineProps({
 <template>
     <Head title="Detail Tafsir Surah Al-Fatihah" />
     <TopBar />
-    <div class="px-[200px] mt-24 font-arabic">
+    <div class="px-[25px] sm:px-36 mt-24 font-arabic">
         <div class="grid">
             <div
-                class="capitalize text-[40px] font-bold flex justify-center items-center gap-10"
+                class="capitalize text-[30px] sm:text-[40px] text-center font-bold flex justify-center items-center gap-10"
             >
                 <i class="pi pi-bookmark"></i>
                 tafsir surah {{ surah.name_latin }}
@@ -44,7 +44,9 @@ defineProps({
                         <i class="pi pi-file mr-1"></i> salin
                     </button></span
                 >
-                <div class="flex justify-end font-medium text-[35px]">
+                <div
+                    class="flex justify-end font-medium text-[27px] leading-[2.5]"
+                >
                     {{ ayat.text_arab }}
                 </div>
                 <span class="capitalize flex items-center font-bold text-[25px]"
