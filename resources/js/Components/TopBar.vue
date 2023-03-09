@@ -12,35 +12,16 @@ import Dropdown from "primevue/dropdown";
                 <span class="text-logo">al-taqur</span>
             </div>
         </template>
-        <template #end>
-            <div class="flex gap-3">
-                <Button
-                    type="button"
-                    icon="pi pi-sun"
-                    class="p-button-rounded p-button-secondary p-button-outlined"
-                />
-                <Dropdown
-                    class="dropdown"
-                    v-model="selectedCity1"
-                    :options="cities"
-                    optionLabel="name"
-                    optionValue="code"
-                    placeholder="Bahasa"
-                />
-            </div>
-        </template>
     </Menubar>
 </template>
 
 <style lang="scss" scoped>
 .myMenu {
-    padding-left: 50px;
-    padding-right: 50px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 999;
-    @apply bg-white;
+    @apply bg-white px-3 sm:px-[50px];
 }
 .text-logo {
     font-weight: bold;

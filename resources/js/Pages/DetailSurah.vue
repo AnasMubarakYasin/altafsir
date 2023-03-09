@@ -18,11 +18,11 @@ defineProps({
 </script>
 
 <template>
-    <Head title="Detail Surah" {{ surah.name_latin }} />
+    <Head :title="'Detail Surah ' + surah.name_latin" />
     <TopBar />
-    <div class="mt-20 font-arabic w-full px-36">
+    <div class="mt-20 font-arabic w-full px-[25px] sm:px-36">
         <div
-            class="capitalize text-[40px] font-bold flex justify-center items-center gap-10"
+            class="capitalize text-[30px] sm:text-[40px] font-bold flex justify-center items-center gap-10 text-center"
         >
             <i class="pi pi-bookmark"></i>
             surah {{ surah.name_latin }} <i class="pi pi-bookmark"></i>
@@ -60,12 +60,14 @@ defineProps({
                     <button
                         class="px-3 py-2 ml-14 bg-[#466970] text-[15px] flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
                     >
-                        <i class="pi pi-file mr-1"></i> salin</button
-                    ><button
+                        <i class="pi pi-file mr-1"></i> salin
+                    </button>
+                    <!-- <button
                         class="px-3 py-2 bg-[#466970] text-[15px] flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
                     >
                         <i class="pi pi-caret-right"></i>
-                    </button>
+                    </button> -->
+                    <audio controls :src="item.audios['05']"></audio>
                 </div>
             </div>
             <hr class="my-4" />

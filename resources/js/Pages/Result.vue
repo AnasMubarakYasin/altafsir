@@ -28,8 +28,8 @@ defineProps({
     <Head title="Search Results" />
     <TopBar />
     <div class="px-[70px] mt-32 font-arabic">
-        <div class="grid gap-10 grid-cols-4">
-            <div>
+        <div class="grid gap-10 md:grid-cols-4">
+            <div class="hidden md:block">
                 <div
                     class="box-border w-full shadow-md rounded-lg bg-[#73959c5b] mt-3"
                 >
@@ -51,7 +51,7 @@ defineProps({
                                             search: item.text,
                                         })
                                     "
-                                    class="text-[13px] subpixel-antialiased"
+                                    class="text-[13px] subpixel-antialiased w-full text-start line-clamp-1"
                                 >
                                     &#9755;
                                     <span class="font-bold">{{
@@ -111,7 +111,7 @@ defineProps({
                                     surah {{ ayat.surah.name_latin }}
                                 </Link>
                                 <div
-                                    class="flex justify-end font-medium text-[25px]"
+                                    class="ml-5 flex justify-end font-medium leading-[70px] line-clamp-1 text-[25px]"
                                 >
                                     {{ ayat.text_arab }}
                                 </div>
