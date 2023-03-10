@@ -4,6 +4,7 @@ import TopBar from "@/Components/TopBar.vue";
 import Footer from "@/Components/Footer.vue";
 import { useToast } from "primevue/usetoast";
 import Toast from "primevue/toast";
+import MusicPlayer from "../Components/MusicPlayer.vue";
 
 defineProps({
     data: {
@@ -37,7 +38,7 @@ async function clipboard(ayat) {
 <template>
     <Head :title="'Detail Surah ' + surah.name_latin" />
     <TopBar />
-    <Toast />
+    <Toast style="width: -webkit-fill-available; left: 20px" />
     <div class="mt-20 font-arabic w-full px-[25px] sm:px-36">
         <div
             class="capitalize text-[30px] sm:text-[40px] font-bold flex justify-center items-center gap-10 text-center"
@@ -82,7 +83,8 @@ async function clipboard(ayat) {
                     >
                         <i class="pi pi-caret-right"></i>
                     </button> -->
-                    <audio controls :src="item.audios['05']"></audio>
+                    <!-- <audio controls :src="item.audios['05']"></audio> -->
+                    <MusicPlayer :src="item.audios['05']" />
                 </div>
             </div>
             <hr class="my-4" />

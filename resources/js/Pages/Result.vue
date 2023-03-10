@@ -27,7 +27,7 @@ defineProps({
 <template>
     <Head title="Search Results" />
     <TopBar />
-    <div class="px-[70px] mt-32 font-arabic">
+    <div class="px-[25px] md:px-[70px] mt-32 font-arabic">
         <div class="grid gap-10 md:grid-cols-4">
             <div class="hidden md:block">
                 <div

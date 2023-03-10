@@ -37,7 +37,7 @@ async function clipboard(text) {
 <template>
     <Head title="Detail Tafsir Surah Al-Fatihah" />
     <TopBar />
-    <Toast />
+    <Toast style="width: -webkit-fill-available; left: 20px" />
     <div class="px-[25px] sm:px-36 mt-24 font-arabic">
         <div class="grid">
             <div
