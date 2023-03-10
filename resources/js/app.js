@@ -12,6 +12,7 @@ import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
 
 import PrimeVue from "primevue/config";
+import ToastService from 'primevue/toastservice';
 
 createInertiaApp({
     resolve: (name) => {
@@ -24,6 +25,7 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue, Ziggy)
             .use(PrimeVue)
+            .use(ToastService)
             .mount(el);
     },
     progress: {

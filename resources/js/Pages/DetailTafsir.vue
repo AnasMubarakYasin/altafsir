@@ -2,6 +2,8 @@
 import { Head } from "@inertiajs/vue3";
 import TopBar from "@/Components/TopBar.vue";
 import Footer from "@/Components/Footer.vue";
+import { useToast } from "primevue/usetoast";
+import Toast from "primevue/toast";
 
 defineProps({
     surah: {
@@ -20,11 +22,22 @@ defineProps({
         required: true,
     },
 });
+const $toast = useToast();
+async function clipboard(text) {
+    await navigator.clipboard.writeText(text);
+    $toast.add({
+        severity: "success",
+        summary: "Success Copy",
+        detail: "Text Copied",
+        life: 3000,
+    });
+}
 </script>
 
 <template>
     <Head title="Detail Tafsir Surah Al-Fatihah" />
     <TopBar />
+    <Toast />
     <div class="px-[25px] sm:px-36 mt-24 font-arabic">
         <div class="grid">
             <div
@@ -40,6 +53,7 @@ defineProps({
                     >ayat
                     <button
                         class="px-2 bg-[#466970] text-[15px] ml-2 flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                        @click="clipboard(ayat.text_arab)"
                     >
                         <i class="pi pi-file mr-1"></i> salin
                     </button></span
@@ -53,6 +67,7 @@ defineProps({
                     >terjemahan
                     <button
                         class="px-2 bg-[#466970] text-[15px] ml-2 flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                        @click="clipboard(ayat.text_id)"
                     >
                         <i class="pi pi-file mr-1"></i> salin
                     </button></span
@@ -64,6 +79,7 @@ defineProps({
                     >tafsir
                     <button
                         class="px-2 bg-[#466970] text-[15px] ml-2 flex items-center text-white w-max rounded-lg hover:bg-slate-400 hover:shadow-md hover:scale-[1.02]"
+                        @click="clipboard(ayat.text)"
                     >
                         <i class="pi pi-file mr-1"></i> salin
                     </button></span
