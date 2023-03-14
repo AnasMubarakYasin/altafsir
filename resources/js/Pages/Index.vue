@@ -71,8 +71,8 @@ export default {
             <div class="col-span-2">
                 <div class="grid justify-items-center">
                     <img src="/al-quran.png" class="w-[150px]" alt="" />
-                    <span class="capitalize font-bold text-[30px] text-center"
-                        >tafsir Al-Qur'an digital</span
+                    <span class="font-bold text-[30px] text-center"
+                        >Tafsir Al-Qur'an Digital</span
                     >
                     <div class="w-full">
                         <form :action="route('web.result')">
