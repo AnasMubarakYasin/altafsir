@@ -15,8 +15,8 @@ class KategorySeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Kategory::truncate();
-        
+        Ayat::query()->update(['kategorie_id' => null]);
+
         $perencanaan = \App\Models\Kategory::create([
             'name' => 'perencanaan wilayah dan kota',
         ]);
