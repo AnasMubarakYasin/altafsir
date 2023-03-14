@@ -364,7 +364,7 @@ class KategorySeeder extends Seeder
         }
 
         $kesesuaian_surah = [7, 55, 55, 55, 55, 55, 55, 23, 33, 2, 36, 36, 36, 18, 18, 18, 80, 80, 80, 80, 80, 80, 80, 80, 6, 13, 22, 7, 12, 31, 50];
-        $kesesuaian_ayat = [58, 7, 8, 10, 11, 12, 13, 80, 72, 256, 33, 34, 35, 32, 33, 34, 25, 26, 27, 28, 29, 30, 31, 32, 141, 4, 5, 7, 47, 10, 9];
+        $kesesuaian_ayat = [58, 7, 8, 10, 11, 12, 13, 80, 72, 265, 33, 34, 35, 32, 33, 34, 25, 26, 27, 28, 29, 30, 31, 32, 141, 4, 5, 7, 47, 10, 9];
         foreach ($kesesuaian_surah as $key => $item) {
             $surah = Surah::where('number', $item)->first();
             if ($surah != null) {
