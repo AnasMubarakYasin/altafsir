@@ -83,7 +83,7 @@ defineProps({
                 </div>
                 <div class="mt-3 font-sans">
                     <span class="capitalize text-[18px]"
-                        >{{ data.ayats?.length ?? 0 }} hasil pencarian untuk '
+                        >{{ data?.ayats?.length ?? 0 }} hasil pencarian untuk '
                         <span class="font-bold"> {{ result }} </span> '</span
                     >
                     <hr class="h-[2px] rounded-lg bg-[#35414174]" />
