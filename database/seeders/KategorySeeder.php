@@ -310,7 +310,6 @@ class KategorySeeder extends Seeder
 
         $k_transportasi = [
             7 => [96],
-            2 => [164],
             22 => [65],
             16 => [8],
             17 => [70],
@@ -321,7 +320,7 @@ class KategorySeeder extends Seeder
             11 => [14],
             29 => [65],
             18 => [71],
-            2 => [238, 239],
+            2 => [164, 238, 239],
             43 => [12, 13],
             105 => [3, 5],
         ];
