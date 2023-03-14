@@ -15,11 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            if (env('DB_DATABASE') == 'pgsql') {
-                $table->string('name')->fulltext();
-            } else {
-                $table->fullText('name');
-            }
+            $table->string('name')->fulltext();
         });
     }
 
