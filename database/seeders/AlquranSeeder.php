@@ -54,10 +54,10 @@ class AlquranSeeder extends Seeder
             // sleep(1);
             return Http::get("https://equran.id/api/v2/surat/$item->nomor")->object();
         } catch (\Throwable $th) {
-            info("fail seeder $item->nomor", [$th->getMessage()]);
+            info("fail get surah $item->nomor", [$th->getMessage()]);
             return $this->get_surah_ayat($item);
         } finally {
-            info("success seed $item->nomor");
+            info("success get surah $item->nomor");
         }
     }
     function get_surah_tafsir($item)
@@ -66,10 +66,10 @@ class AlquranSeeder extends Seeder
             // sleep(1);
             return Http::get("https://equran.id/api/v2/tafsir/$item->nomor")->object();
         } catch (\Throwable $th) {
-            info("fail seeder $item->nomor", [$th->getMessage()]);
+            info("fail get tafsir $item->nomor", [$th->getMessage()]);
             return $this->get_surah_ayat($item);
         } finally {
-            info("success seed $item->nomor");
+            info("success get tafsir $item->nomor");
         }
     }
 }

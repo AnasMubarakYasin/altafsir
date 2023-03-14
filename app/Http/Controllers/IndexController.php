@@ -31,7 +31,8 @@ class IndexController extends Controller
         if ($keyword) {
             Searcher::log($keyword);
         }
-        $result = Kategory::with("ayats")->with("ayats.surah")->with("ayats.tafsir")->where('name', 'like', "%" . $keyword . "%")->first();
+        // $result = Kategory::with("ayats")->with("ayats.surah")->with("ayats.tafsir")->where('name', 'like', "%" . $keyword . "%")->first();
+        $result = Kategory::whereFulltext("name", "Transportasi")->with("ayats")->with("ayats.surah")->with("ayats.tafsir")->first();
         return inertia('Result', [
             'data' => $result,
             'result' => $keyword,

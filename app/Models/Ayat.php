@@ -15,7 +15,7 @@ class Ayat extends Model
         "text_arab",
         "text_latin",
         "audios",
-        "kategorie_id",
+        // "kategorie_id",
     ];
     protected $hidden = [];
     protected $casts = [
@@ -28,5 +28,9 @@ class Ayat extends Model
     public function tafsir()
     {
         return $this->hasOne(Tafsir::class);
+    }
+    public function kategories()
+    {
+        return $this->belongsToMany(Kategory::class);
     }
 }

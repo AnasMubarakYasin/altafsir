@@ -18,6 +18,7 @@ class Kategory extends Model
 
     public function ayats()
     {
-        return $this->hasMany(Ayat::class, 'kategorie_id');
+        // return $this->hasMany(Ayat::class, 'kategorie_id');
+        return $this->belongsToMany(Ayat::class);
     }
 }
