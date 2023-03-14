@@ -17,42 +17,54 @@ class KategorySeeder extends Seeder
     {
         Ayat::query()->update(['kategorie_id' => null]);
 
-        $perencanaan = \App\Models\Kategory::create([
-            'name' => 'perencanaan wilayah dan kota',
-        ]);
-        $tata = \App\Models\Kategory::create([
-            'name' => 'tata ruang',
-        ]);
-        $lingkungan = \App\Models\Kategory::create([
-            'name' => 'lingkungan pelestarian dan larangan berbuat kerusakan',
-        ]);
-        $pemukiman = \App\Models\Kategory::create([
-            'name' => 'permukiman',
-        ]);
-        $pariwisata = \App\Models\Kategory::create([
-            'name' => 'pariwisata',
-        ]);
-        $transportasi = \App\Models\Kategory::create([
-            'name' => 'transportasi',
-        ]);
-        $pembangunan = \App\Models\Kategory::create([
-            'name' => 'pembangunan atau pengembangan wilayah',
-        ]);
-        $bencana = \App\Models\Kategory::create([
-            'name' => 'bencana alam',
-        ]);
-        $sosial = \App\Models\Kategory::create([
-            'name' => 'sosial',
-        ]);
-        $ekonomi = \App\Models\Kategory::create([
-            'name' => 'ekonomi',
-        ]);
-        $prasarana = \App\Models\Kategory::create([
-            'name' => 'prasarana wilayah',
-        ]);
-        $kesesuaian = \App\Models\Kategory::create([
-            'name' => 'kesesuaian lahan',
-        ]);
+        $perencanaan = \App\Models\Kategory::where(
+            'name',
+            'perencanaan wilayah dan kota'
+        );
+        $tata = \App\Models\Kategory::where(
+            'name',
+            'tata ruang'
+        );
+        $lingkungan = \App\Models\Kategory::where(
+            'name',
+            'lingkungan pelestarian dan larangan berbuat kerusakan'
+        );
+        $pemukiman = \App\Models\Kategory::where(
+            'name',
+            'permukiman'
+        );
+        $pariwisata = \App\Models\Kategory::where(
+            'name',
+            'pariwisata'
+        );
+        $transportasi = \App\Models\Kategory::where(
+            'name',
+            'transportasi'
+        );
+        $pembangunan = \App\Models\Kategory::where(
+            'name',
+            'pembangunan atau pengembangan wilayah'
+        );
+        $bencana = \App\Models\Kategory::where(
+            'name',
+            'bencana alam'
+        );
+        $sosial = \App\Models\Kategory::where(
+            'name',
+            'sosial'
+        );
+        $ekonomi = \App\Models\Kategory::where(
+            'name',
+            'ekonomi'
+        );
+        $prasarana = \App\Models\Kategory::where(
+            'name',
+            'prasarana wilayah'
+        );
+        $kesesuaian = \App\Models\Kategory::where(
+            'name',
+            'kesesuaian lahan'
+        );
 
         Surah::where('number', 8)
             ->first()
