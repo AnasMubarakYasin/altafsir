@@ -20,51 +20,51 @@ class KategorySeeder extends Seeder
         $perencanaan = \App\Models\Kategory::where(
             'name',
             'perencanaan wilayah dan kota'
-        )->get();
+        )->first();
         $tata = \App\Models\Kategory::where(
             'name',
             'tata ruang'
-        )->get();
+        )->first();
         $lingkungan = \App\Models\Kategory::where(
             'name',
             'lingkungan pelestarian dan larangan berbuat kerusakan'
-        )->get();
+        )->first();
         $pemukiman = \App\Models\Kategory::where(
             'name',
             'permukiman'
-        )->get();
+        )->first();
         $pariwisata = \App\Models\Kategory::where(
             'name',
             'pariwisata'
-        )->get();
+        )->first();
         $transportasi = \App\Models\Kategory::where(
             'name',
             'transportasi'
-        )->get();
+        )->first();
         $pembangunan = \App\Models\Kategory::where(
             'name',
             'pembangunan atau pengembangan wilayah'
-        )->get();
+        )->first();
         $bencana = \App\Models\Kategory::where(
             'name',
             'bencana alam'
-        )->get();
+        )->first();
         $sosial = \App\Models\Kategory::where(
             'name',
             'sosial'
-        )->get();
+        )->first();
         $ekonomi = \App\Models\Kategory::where(
             'name',
             'ekonomi'
-        )->get();
+        )->first();
         $prasarana = \App\Models\Kategory::where(
             'name',
             'prasarana wilayah'
-        )->get();
+        )->first();
         $kesesuaian = \App\Models\Kategory::where(
             'name',
             'kesesuaian lahan'
-        )->get();
+        )->first();
 
         Surah::where('number', 8)
             ->first()
