@@ -81,11 +81,11 @@ defineProps({
                         </form>
                     </div>
                 </div>
-                <div class="mt-3">
+                <div class="mt-3 font-sans">
                     <span class="capitalize text-[18px]"
-                        >hasil pencarian untuk '
+                        >{{ data.ayats.length }} hasil pencarian untuk '
                         <span class="font-bold"> {{ result }} </span> '</span
-                    ><span>({{ data.ayats.length }})</span>
+                    >
                     <hr class="h-[2px] rounded-lg bg-[#35414174]" />
                     <div class="mt-2">
                         <div v-if="data == null" class="h-[358px]">
@@ -112,7 +112,7 @@ defineProps({
                                     {{ ayat.surah.number }}:{{ ayat.number }}
                                 </Link>
                                 <div
-                                    class="ml-5 flex justify-end font-medium leading-[70px] line-clamp-1 text-[25px]"
+                                    class="ml-5 flex justify-end font-arabic font-medium leading-[70px] line-clamp-1 text-[25px]"
                                 >
                                     {{ ayat.text_arab }}
                                 </div>
