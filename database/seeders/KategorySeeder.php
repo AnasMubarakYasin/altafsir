@@ -16,6 +16,18 @@ class KategorySeeder extends Seeder
     public function run()
     {
         // Ayat::query()->update(['kategorie_id' => null]);
+        // $perencanaan = Kategory::where('name', 'perencanaan wilayah dan kota')->first();
+        // $tata = Kategory::where('name', 'tata ruang')->first();
+        // $lingkungan = Kategory::where('name', 'lingkungan pelestarian dan larangan berbuat kerusakan')->first();
+        // $pemukiman = Kategory::where('name', 'permukiman')->first();
+        // $pariwisata = Kategory::where('name', 'pariwisata')->first();
+        // $transportasi = Kategory::where('name', 'transportasi')->first();
+        // $pembangunan = Kategory::where('name', 'pembangunan atau pengembangan wilayah')->first();
+        // $bencana = Kategory::where('name', 'bencana alam')->first();
+        // $sosial = Kategory::where('name', 'sosial')->first();
+        // $ekonomi = Kategory::where('name', 'ekonomi')->first();
+        // $prasarana = Kategory::where('name', 'prasarana wilayah')->first();
+        // $kesesuaian = Kategory::where('name', 'kesesuaian lahan')->first();
 
         $perencanaan = \App\Models\Kategory::where(
             'name',
@@ -345,36 +357,36 @@ class KategorySeeder extends Seeder
         $this->seed_kategory(
             [
                 38 => [
-                  27,
-                  28,
+                    27,
+                    28,
                 ],
                 31 => [
-                  27,
+                    27,
                 ],
                 16 => [
-                  12,
-                  15,
-                  68,
-                  69,
-                  89,
+                    12,
+                    15,
+                    68,
+                    69,
+                    89,
                 ],
                 25 => [
-                  48,
-                  49,
-                  53,
-                  67,
+                    48,
+                    49,
+                    53,
+                    67,
                 ],
                 5 => [
-                  62,
+                    62,
                 ],
                 2 => [
-                  22,
-                  29,
-                  29,
-                  267,
+                    22,
+                    29,
+                    29,
+                    267,
                 ],
             ],
-            $prasarana,            
+            $prasarana,
         );
 
         // $reduced = array_reduce($array, function ($acc, $value) {
@@ -386,10 +398,154 @@ class KategorySeeder extends Seeder
         //     }
         //     return $acc;
         // }, []);
+        $this->seed_kategory(
+            [
+                8 => [60],
+                51 => [56],
+                59 => [18],
+                6 => [38],
+                17 => [36, 11],
+                12 => [47, 48, 49],
+                57 => [22],
+                94 => [7],
+                7 => [172],
+                2 => [2],
+                38 => [27],
+                35 => [11],
+            ],
+            $perencanaan,
+        );
+        $this->seed_kategory(
+            [
+                62 => [9, 11],
+                22 => [45],
+                13 => [31],
+                78 => [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+            ],
+            $tata,
+        );
+        $this->seed_kategory(
+            [
+                16 => [80, 81],
+                2 => [25, 22, 36, 29],
+                7 => [10, 24, 74],
+                34 => [15, 16],
+                33 => [27, 13, 33, 53],
+                51 => [36],
+                29 => [41],
+                8 => [5],
+                2 => [189],
+                59 => [2],
+                15 => [82, 19, 20],
+                17 => [93],
+                3 => [96],
+                27 => [52],
+                4 => [15],
+                24 => [27, 29, 61],
+                42 => [149],
+                66 => [11],
+                43 => [34, 11],
+                10 => [87, 5],
+                6 => [99],
+                13 => [3],
+                14 => [32],
+                20 => [53],
+                55 => [10],
+                77 => [25, 27],
+            ],
+            $pemukiman,
+        );
+        $this->seed_kategory(
+            [
+                7 => [56, 74, 85],
+                2 => [11, 12, 30, 60],
+                28 => [77],
+                30 => [41, 42],
+                10 => [41],
+                2 => [25, 27, 204, 205, 206],
+                26 => [151, 152],
+                5 => [32, 33, 64],
+                13 => [25],
+                11 => [85],
+                17 => [7],
+            ],
+            $lingkungan,
+        );
+        $this->seed_kategory(
+            [
+                16 => [80, 81],
+                2 => [25, 22, 189, 36, 29],
+                7 => [10, 24, 74],
+                34 => [15, 27],
+                33 => [16, 13, 33, 53],
+                51 => [36],
+                29 => [41],
+                8 => [5],
+                59 => [2],
+                15 => [82, 19, 20],
+                17 => [93],
+                3 => [96],
+                27 => [52],
+                4 => [15],
+                24 => [27, 29, 61],
+                42 => [149],
+                66 => [11],
+                43 => [34, 11],
+                10 => [87, 5],
+                6 => [99],
+                13 => [3],
+                14 => [32],
+                20 => [53],
+                55 => [10],
+                77 => [25, 27],
+            ],
+            $pemukiman
+        );
+        $this->seed_kategory(
+            [
+                25 => [59],
+                49 => [13],
+                5 => [2],
+                18 => [84, 94],
+                13 => [11],
+                32 => [4],
+                95 => [4],
+                12 => [87],
+                17 => [84],
+                8 => [27],
+                16 => [90],
+                10 => [101],
+                2 => [219, 60],
+                11 => [61],
+                9 => [18],
+            ],
+            $pembangunan,
+        );
+
+        $this->seed_kategory(
+            [
+                7 => [58, 7],
+                55 => [7, 8, 9, 10, 11, 12, 13],
+                23 => [80],
+                33 => [72],
+                2 => [265],
+                36 => [33, 34, 35],
+                18 => [32, 33, 34],
+                80 => [25, 26, 27, 28, 29, 30, 31, 32],
+                6 => [141],
+                13 => [4],
+                22 => [5],
+                12 => [47],
+                31 => [10],
+                50 => [9],
+            ],
+            $kesesuaian
+        );
     }
     private function seed_kategory($list, $model)
     {
         foreach ($list as $surah => $ayats) {
+
             $m_surah = Surah::where('number', $surah)->first();
             if ($m_surah != null) {
                 foreach ($ayats as $ayat) {
