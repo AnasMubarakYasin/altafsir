@@ -39,7 +39,7 @@ async function clipboard(ayat) {
     <Head :title="'Detail Surah ' + surah.name_latin" />
     <TopBar />
     <Toast style="width: -webkit-fill-available; left: 20px" />
-    <div class="mt-20 font-arabic w-full px-[25px] sm:px-36">
+    <div class="mt-20 font-sans w-full px-[25px] sm:px-36">
         <div
             class="capitalize text-[30px] sm:text-[40px] font-bold flex justify-center items-center gap-10 text-center"
         >
@@ -62,7 +62,7 @@ async function clipboard(ayat) {
                     </div>
                     <div class="grid gap-4 w-full">
                         <div
-                            class="text-end font-medium text-[27px] leading-[2.5]"
+                            class="text-end font-arabic font-medium text-[27px] leading-[2.5]"
                         >
                             {{ item.text_arab }}
                         </div>
