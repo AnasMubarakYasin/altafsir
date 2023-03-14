@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Ayat;
+use App\Models\AyatKategory;
 use App\Models\Kategory;
 use App\Models\Surah;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,19 +16,7 @@ class KategorySeeder extends Seeder
      */
     public function run()
     {
-        // Ayat::query()->update(['kategorie_id' => null]);
-        // $perencanaan = Kategory::where('name', 'perencanaan wilayah dan kota')->first();
-        // $tata = Kategory::where('name', 'tata ruang')->first();
-        // $lingkungan = Kategory::where('name', 'lingkungan pelestarian dan larangan berbuat kerusakan')->first();
-        // $pemukiman = Kategory::where('name', 'permukiman')->first();
-        // $pariwisata = Kategory::where('name', 'pariwisata')->first();
-        // $transportasi = Kategory::where('name', 'transportasi')->first();
-        // $pembangunan = Kategory::where('name', 'pembangunan atau pengembangan wilayah')->first();
-        // $bencana = Kategory::where('name', 'bencana alam')->first();
-        // $sosial = Kategory::where('name', 'sosial')->first();
-        // $ekonomi = Kategory::where('name', 'ekonomi')->first();
-        // $prasarana = Kategory::where('name', 'prasarana wilayah')->first();
-        // $kesesuaian = Kategory::where('name', 'kesesuaian lahan')->first();
+        AyatKategory::truncate();
 
         $perencanaan = \App\Models\Kategory::where(
             'name',
