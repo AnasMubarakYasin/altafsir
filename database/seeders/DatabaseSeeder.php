@@ -41,6 +41,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'pariwisata',
         ]);
         \App\Models\Kategory::create([
+            'name' => 'transportasi',
+        ]);
+        \App\Models\Kategory::create([
             'name' => 'pembangunan atau pengembangan wilayah',
         ]);
         \App\Models\Kategory::create([

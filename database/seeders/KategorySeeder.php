@@ -20,6 +20,7 @@ class KategorySeeder extends Seeder
         $lingkungan = Kategory::where('name', 'lingkungan pelestarian dan larangan berbuat kerusakan')->first();
         $pemukiman = Kategory::where('name', 'permukiman')->first();
         $pariwisata = Kategory::where('name', 'pariwisata')->first();
+        $transportasi = Kategory::where('name', 'transportasi')->first();
         $pembangunan = Kategory::where('name', 'pembangunan atau pengembangan wilayah')->first();
         $bencana = Kategory::where('name', 'bencana alam')->first();
         $sosial = Kategory::where('name', 'sosial')->first();
@@ -280,6 +281,39 @@ class KategorySeeder extends Seeder
                 }
             } else {
                 info("blammats", [$item]);
+            }
+        }
+
+        $list_transportasi = [
+            7 => [96],
+            2 => [164],
+            22 => [65],
+            16 => [8],
+            17 => [70],
+            36 => [41, 42],
+            22 => [65],
+            31 => [31],
+            67 => [19],
+            11 => [14],
+            29 => [65],
+            18 => [71],
+            2 => [238, 239],
+            43 => [12, 13],
+            105 => [3, 5],
+        ];
+        foreach ($list_transportasi as $surah => $ayats) {
+            $m_surah = Surah::where('number', $surah)->first();
+            if ($m_surah != null) {
+                foreach ($ayats as $ayat) {
+                    $m_ayat =  $m_surah->ayats()->where('number', $ayat)->first();
+                    if ($m_ayat != null) {
+                        $m_ayat->fill(['kategorie_id' => $transportasi->id])->save();
+                    } else {
+                        logger("error", [$surah, $ayat]);
+                    }
+                }
+            } else {
+                logger("error", [$surah]);
             }
         }
 
