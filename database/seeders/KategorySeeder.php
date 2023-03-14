@@ -294,53 +294,44 @@ class KategorySeeder extends Seeder
             }
         }
 
-        $pariwisata_surah = [27, 27, 27, 34, 3, 67, 67, 67, 29, 6, 16, 16, 16, 30, 30, 12, 47, 22, 3, 38, 31];
-        $pariwisata_ayat = [59, 60, 69, 18, 100, 3, 4, 15, 20, 11, 5, 6, 14, 9, 42, 109, 10, 46, 137, 27, 31];
-        foreach ($pariwisata_surah as $key => $item) {
-            $surah = Surah::where('number', $item)->first();
-            if ($surah != null) {
-                $ayat =  $surah->ayats()->where('number', $pariwisata_ayat[$key])->first();
-                if ($ayat != null) {
-                    $ayat->fill(['kategorie_id' => $pariwisata->id])->save();
-                } else {
-                    info("blammats", [$pariwisata_ayat[$key]]);
-                }
-            } else {
-                info("blammats", [$item]);
-            }
-        }
-
-        $k_transportasi = [
-            7 => [96],
-            22 => [65],
-            16 => [8],
-            17 => [70],
-            36 => [41, 42],
-            22 => [65],
-            31 => [31],
-            67 => [19],
-            11 => [14],
-            29 => [65],
-            18 => [71],
-            2 => [164, 238, 239],
-            43 => [12, 13],
-            105 => [3, 5],
-        ];
-        foreach ($k_transportasi as $surah => $ayats) {
-            $m_surah = Surah::where('number', $surah)->first();
-            if ($m_surah != null) {
-                foreach ($ayats as $ayat) {
-                    $m_ayat =  $m_surah->ayats()->where('number', $ayat)->first();
-                    if ($m_ayat != null) {
-                        $m_ayat->fill(['kategorie_id' => $transportasi->id])->save();
-                    } else {
-                        logger("error", [$surah, $ayat]);
-                    }
-                }
-            } else {
-                logger("error", [$surah]);
-            }
-        }
+        $this->seed_kategory(
+            [
+                27 => [59, 60, 69],
+                34 => [18],
+                4 => [100],
+                67 => [3, 4, 15],
+                29 => [20],
+                6 => [11],
+                16 => [5, 6, 14],
+                30 => [9, 42],
+                12 => [109],
+                47 => [10],
+                22 => [46],
+                3 => [137],
+                38 => [27],
+                31 => [3],
+            ],
+            $pariwisata,
+        );
+        $this->seed_kategory(
+            [
+                7 => [96],
+                22 => [65],
+                16 => [8],
+                17 => [70],
+                36 => [41, 42],
+                22 => [65],
+                31 => [31],
+                67 => [19],
+                11 => [14],
+                29 => [65],
+                18 => [71],
+                2 => [164, 238, 239],
+                43 => [12, 13],
+                105 => [3, 5],
+            ],
+            $transportasi,
+        );
 
         $pembangunan_surah = [25, 49, 5, 18, 18, 13, 32, 95, 12, 17, 8, 16, 10, 2, 2, 11, 9];
         $pembangunan_ayat = [59, 13, 2, 84, 94, 11, 4, 4, 87, 84, 27, 90, 101, 219, 60, 61, 18];
@@ -435,6 +426,24 @@ class KategorySeeder extends Seeder
                 }
             } else {
                 info("blammats", [$item]);
+            }
+        }
+    }
+    private function seed_kategory($list, $model)
+    {
+        foreach ($list as $surah => $ayats) {
+            $m_surah = Surah::where('number', $surah)->first();
+            if ($m_surah != null) {
+                foreach ($ayats as $ayat) {
+                    $m_ayat =  $m_surah->ayats()->where('number', $ayat)->first();
+                    if ($m_ayat != null) {
+                        $m_ayat->fill(['kategorie_id' => $model->id])->save();
+                    } else {
+                        logger("error", [$surah, $ayat]);
+                    }
+                }
+            } else {
+                logger("error", [$surah]);
             }
         }
     }
