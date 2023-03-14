@@ -25,6 +25,10 @@ Route::post('/tafsir', 'AyatController@create')->name('api.tafsir.create');
 Route::patch('/tafsir/{tafsir}', 'AyatController@update')->name('api.tafsir.update');
 Route::delete('/tafsir', 'AyatController@delete')->name('api.tafsir.delete');
 
+Route::post('/searcher', 'SearcherController@create')->name('api.searcher.create');
+Route::patch('/searcher/{searcher}', 'SearcherController@update')->name('api.searcher.update');
+Route::delete('/searcher', 'SearcherController@delete')->name('api.searcher.delete');
+
 Route::post('/kategory', 'KategoryController@create_api')->name('api.kategory.create');
 Route::patch('/kategory/{kategory}', 'KategoryController@update')->name('api.kategory.update');
 Route::delete('/kategory', 'KategoryController@delete')->name('api.kategory.delete');

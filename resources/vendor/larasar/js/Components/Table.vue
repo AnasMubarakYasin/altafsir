@@ -109,6 +109,7 @@ async function handle_update(row, key, value, initial_value) {
         await axios.patch($props.api.update(row.id), {
             [key]: value,
         });
+        $props.data = rows.value;
     } catch (error) {
         console.log(error);
         $quasar.notify({
@@ -121,11 +122,21 @@ async function handle_update(row, key, value, initial_value) {
     }
 }
 async function handle_delete() {
-    console.log(selected.value)
+    // console.log(selected.value)
     loading.value = true;
     try {
         // await axios.get("/sanctum/csrf-cookie");
-        await axios.delete($props.api.delete(selected.value.map((v) => v.id)));
+        const ids = selected.value.map((v) => v.id);
+        await axios.delete($props.api.delete(ids));
+        const copy = $props.data.slice();
+        for (const id of ids) {
+            const index = copy.findIndex((value) => {
+                return value.id == id;
+            });
+            if (index == -1) continue;
+            copy.splice(index, 1);
+        }
+        rows.value = $props.data = copy.slice();
         selected.value = [];
     } catch (error) {
         console.log(error);
@@ -390,7 +401,10 @@ function gen_columns(arr = [], v = null) {
                     />
                 </q-card-section>
                 <q-card-section>
-                    <q-form @submit.prevent="handle_create" class="grid gap-2 p-2">
+                    <q-form
+                        @submit.prevent="handle_create"
+                        class="grid gap-2 p-2"
+                    >
                         <template
                             v-for="column of definitions.filter(
                                 (item) => item.name != 'id'

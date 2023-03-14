@@ -18,9 +18,9 @@ const definitions: TableDef[] = [
     },
 ];
 const api: TableApi = {
-    create: "",
-    update: (id) => "",
-    delete: (ids) => "",
+    create: route("api.searcher.create"),
+    update: (id) => route("api.searcher.update", { searcher: id }),
+    delete: (ids) => route("api.searcher.delete", { "id": ids }),
 }
 
 export { definitions, api };
