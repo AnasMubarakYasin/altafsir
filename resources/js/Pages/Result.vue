@@ -120,7 +120,7 @@ defineProps({
                                     <span class="capitalize text-[16px]"
                                         >terjemahan</span
                                     >
-                                    <span>
+                                    <span class="line-clamp-2">
                                         {{ ayat.text_id }}
                                     </span>
                                 </div>
