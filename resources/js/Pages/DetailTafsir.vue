@@ -38,7 +38,7 @@ async function clipboard(text) {
     <Head title="Detail Tafsir Surah Al-Fatihah" />
     <TopBar />
     <Toast style="width: -webkit-fill-available; left: 20px" />
-    <div class="px-[25px] sm:px-36 mt-24 font-arabic">
+    <div class="px-[25px] sm:px-36 mt-24 font-sans">
         <div class="grid">
             <div
                 class="capitalize text-[30px] sm:text-[40px] text-center font-bold flex justify-center items-center gap-10"
@@ -61,7 +61,7 @@ async function clipboard(text) {
                     </button></span
                 >
                 <div
-                    class="flex justify-end font-medium text-[27px] leading-[2.5]"
+                    class="flex font-arabic justify-end font-medium text-[27px] leading-[2.5]"
                 >
                     {{ ayat.text_arab }}
                 </div>
