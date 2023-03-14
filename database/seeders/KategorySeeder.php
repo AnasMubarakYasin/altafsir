@@ -15,18 +15,42 @@ class KategorySeeder extends Seeder
      */
     public function run()
     {
-        $perencanaan = Kategory::where('name', 'perencanaan wilayah dan kota')->first();
-        $tata = Kategory::where('name', 'tata ruang')->first();
-        $lingkungan = Kategory::where('name', 'lingkungan pelestarian dan larangan berbuat kerusakan')->first();
-        $pemukiman = Kategory::where('name', 'permukiman')->first();
-        $pariwisata = Kategory::where('name', 'pariwisata')->first();
-        $transportasi = Kategory::where('name', 'transportasi')->first();
-        $pembangunan = Kategory::where('name', 'pembangunan atau pengembangan wilayah')->first();
-        $bencana = Kategory::where('name', 'bencana alam')->first();
-        $sosial = Kategory::where('name', 'sosial')->first();
-        $ekonomi = Kategory::where('name', 'ekonomi')->first();
-        $prasarana = Kategory::where('name', 'prasarana wilayah')->first();
-        $kesesuaian = Kategory::where('name', 'kesesuaian lahan')->first();
+        $perencanaan = \App\Models\Kategory::create([
+            'name' => 'perencanaan wilayah dan kota',
+        ]);
+        $tata = \App\Models\Kategory::create([
+            'name' => 'tata ruang',
+        ]);
+        $lingkungan = \App\Models\Kategory::create([
+            'name' => 'lingkungan pelestarian dan larangan berbuat kerusakan',
+        ]);
+        $pemukiman = \App\Models\Kategory::create([
+            'name' => 'permukiman',
+        ]);
+        $pariwisata = \App\Models\Kategory::create([
+            'name' => 'pariwisata',
+        ]);
+        $transportasi = \App\Models\Kategory::create([
+            'name' => 'transportasi',
+        ]);
+        $pembangunan = \App\Models\Kategory::create([
+            'name' => 'pembangunan atau pengembangan wilayah',
+        ]);
+        $bencana = \App\Models\Kategory::create([
+            'name' => 'bencana alam',
+        ]);
+        $sosial = \App\Models\Kategory::create([
+            'name' => 'sosial',
+        ]);
+        $ekonomi = \App\Models\Kategory::create([
+            'name' => 'ekonomi',
+        ]);
+        $prasarana = \App\Models\Kategory::create([
+            'name' => 'prasarana wilayah',
+        ]);
+        $kesesuaian = \App\Models\Kategory::create([
+            'name' => 'kesesuaian lahan',
+        ]);
 
         Surah::where('number', 8)
             ->first()
@@ -284,7 +308,7 @@ class KategorySeeder extends Seeder
             }
         }
 
-        $list_transportasi = [
+        $k_transportasi = [
             7 => [96],
             2 => [164],
             22 => [65],
@@ -301,7 +325,7 @@ class KategorySeeder extends Seeder
             43 => [12, 13],
             105 => [3, 5],
         ];
-        foreach ($list_transportasi as $surah => $ayats) {
+        foreach ($k_transportasi as $surah => $ayats) {
             $m_surah = Surah::where('number', $surah)->first();
             if ($m_surah != null) {
                 foreach ($ayats as $ayat) {

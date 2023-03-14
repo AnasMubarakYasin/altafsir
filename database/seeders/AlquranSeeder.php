@@ -51,7 +51,7 @@ class AlquranSeeder extends Seeder
     function get_surah_ayat($item)
     {
         try {
-            sleep(1);
+            // sleep(1);
             return Http::get("https://equran.id/api/v2/surat/$item->nomor")->object();
         } catch (\Throwable $th) {
             info("fail seeder $item->nomor", [$th->getMessage()]);
@@ -63,7 +63,7 @@ class AlquranSeeder extends Seeder
     function get_surah_tafsir($item)
     {
         try {
-            sleep(1);
+            // sleep(1);
             return Http::get("https://equran.id/api/v2/tafsir/$item->nomor")->object();
         } catch (\Throwable $th) {
             info("fail seeder $item->nomor", [$th->getMessage()]);

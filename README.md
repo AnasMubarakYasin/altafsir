@@ -14,6 +14,7 @@ composer i
 npm i
 php artisan env:decrypt --key=***
 php artisan migrate
+php artisan migrate:refresh --path=database/migrations/2023_03_04_163917_create_kategories_table.php
 php artisan db:seed
 php artisan db:seed --class=AlquranSeeder
 php artisan db:seed --class=KategorySeeder
