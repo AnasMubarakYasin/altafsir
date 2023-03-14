@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="b-ZxLe_--k-C8GOVwAqbgMSGcY72TNHPayzI-t31QK8" />
+    <meta name="description" content="pencari tafsir khusus perencanaan wilayah dan kota" />
 
     <link rel="shortcut icon" href="{{ asset('/logo.png') }}" type="image/x-icon">
     <title inertia>{{ config('app.name', 'Laravel') }}</title>

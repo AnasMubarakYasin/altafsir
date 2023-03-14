@@ -85,7 +85,7 @@ defineProps({
                     <span class="capitalize text-[18px]"
                         >hasil pencarian untuk '
                         <span class="font-bold"> {{ result }} </span> '</span
-                    >
+                    ><span>({{ data.ayats.length }})</span>
                     <hr class="h-[2px] rounded-lg bg-[#35414174]" />
                     <div class="mt-2">
                         <div v-if="data == null" class="h-[358px]">
