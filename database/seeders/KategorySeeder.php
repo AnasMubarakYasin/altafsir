@@ -15,6 +15,8 @@ class KategorySeeder extends Seeder
      */
     public function run()
     {
+        \App\Models\Kategory::truncate();
+        
         $perencanaan = \App\Models\Kategory::create([
             'name' => 'perencanaan wilayah dan kota',
         ]);
