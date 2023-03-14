@@ -109,6 +109,7 @@ defineProps({
                                         class="pi pi-angle-double-right mr-1"
                                     ></i>
                                     surah {{ ayat.surah.name_latin }}
+                                    {{ ayat.surah.number }}:{{ ayat.number }}
                                 </Link>
                                 <div
                                     class="ml-5 flex justify-end font-medium leading-[70px] line-clamp-1 text-[25px]"

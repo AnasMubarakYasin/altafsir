@@ -44,7 +44,9 @@ async function clipboard(text) {
                 class="capitalize text-[30px] sm:text-[40px] text-center font-bold flex justify-center items-center gap-10"
             >
                 <i class="pi pi-bookmark"></i>
-                tafsir surah {{ surah.name_latin }}
+                tafsir surah {{ surah.name_latin }} {{ ayat.surah.number }}:{{
+                    ayat.number
+                }}
                 <i class="pi pi-bookmark"></i>
             </div>
             <hr class="my-3" />
